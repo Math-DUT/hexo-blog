@@ -551,7 +551,325 @@ int main() {
       <pre><code class="language-javascript">console.log("Hello World!");</code></pre>
     </div>
   </div>
-</div></div></section><div id="reward-container"><span class="hty-icon-button button-glow" id="reward-button" title="Donate" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === &quot;none&quot;) ? &quot;block&quot; : &quot;none&quot;;"><span class="icon iconify" data-icon="ri:hand-coin-line"></span></span><div id="reward-comment">I'm so cute. Please give me money.</div></div><ul class="post-copyright"><li class="post-copyright-author"><strong>Post author: </strong>John Doe</li><li class="post-copyright-link"><strong>Post link: </strong><a href="http://example.com/2026/03/28/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="数据结构：从入门到“入土”">http://example.com/2026/03/28/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</a></li><li class="post-copyright-license"><strong>Copyright Notice: </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><span class="icon iconify" data-icon="ri:creative-commons-line"></span><span class="icon iconify" data-icon="ri:creative-commons-by-line"></span><span class="icon iconify" data-icon="ri:creative-commons-nc-line"></span><span class="icon iconify" data-icon="ri:creative-commons-sa-line"></span></a> unless otherwise stated.</li></ul></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/CelesteStrawberry/2026/03/29/%E5%9B%A2%E4%BD%93%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%A4%A9%E6%A2%AF%E8%B5%9B/%E9%A2%98%E7%9B%AE%E7%B4%A2%E5%BC%95/" rel="prev" title="题目索引"><span class="icon iconify" data-icon="ri:arrow-left-s-line"></span><span class="post-nav-text">题目索引</span></a></div><div class="post-nav-item"></div></div></div><div class="hty-card" id="comment"><style>.utterances {
+</div></div></section><div id="reward-container"><span class="hty-icon-button button-glow" id="reward-button" title="Donate"><span class="icon iconify" data-icon="ri:hand-coin-line"></span></span><div id="reward-comment">I'm so cute. Please give me money.</div><div class="fun-coins" style="display: none;"><div class="fun-coins-title">🪙 投币支持 🪙</div><div class="coins-container"><div class="coin-item" data-coin="金币"><div class="coin-emoji" style="color: #FFD700">🥇</div><div class="coin-name">金币</div><div class="coin-count">0</div><button class="coin-btn">投币 +1</button></div><div class="coin-item" data-coin="银币"><div class="coin-emoji" style="color: #C0C0C0">🥈</div><div class="coin-name">银币</div><div class="coin-count">0</div><button class="coin-btn">投币 +1</button></div><div class="coin-item" data-coin="铜币"><div class="coin-emoji" style="color: #CD7F32">🥉</div><div class="coin-name">铜币</div><div class="coin-count">0</div><button class="coin-btn">投币 +1</button></div><div class="coin-item" data-coin="铁币"><div class="coin-emoji" style="color: #A0A0A0">⚙️</div><div class="coin-name">铁币</div><div class="coin-count">0</div><button class="coin-btn">投币 +1</button></div></div><div class="total-coins"><span>总计投币:</span><span id="total-coins-count">0</span></div></div></div><style>/* 趣味投币样式 - 自适应亮色/暗色背景 */
+.fun-coins {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-top: 1px solid var(--hty-border-color, #eaecef);
+  text-align: center;
+  background: var(--hty-card-bg, rgba(255,255,255,0.8));
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+}
+.fun-coins-title {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: var(--hty-text-color, #333);
+}
+.coins-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.coin-item {
+  background: var(--hty-bg-color-light, #fff);
+  border-radius: 16px;
+  padding: 0.8rem;
+  width: 100px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid var(--hty-border-color, #ddd);
+}
+.coin-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.coin-emoji {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.coin-name {
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+  color: var(--hty-text-color, #333);
+}
+.coin-count {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--hty-primary-color, #0078e7);
+  margin-bottom: 0.5rem;
+}
+.coin-btn {
+  background: var(--hty-primary-color, #0078e7);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 6px 16px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: background 0.2s, transform 0.1s;
+}
+.coin-btn:hover {
+  background: var(--hty-primary-dark, #005bb5);
+  transform: scale(0.98);
+}
+.coin-btn:active {
+  transform: scale(0.96);
+}
+.total-coins {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  color: var(--hty-text-color, #333);
+}
+#total-coins-count {
+  color: var(--hty-primary-color, #ff9800);
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+/* 暗色模式下微调阴影和背景 */
+@media (prefers-color-scheme: dark) {
+  .fun-coins {
+    background: var(--hty-card-bg, rgba(30,30,40,0.9));
+    border-top-color: var(--hty-border-color, #2c2c3a);
+  }
+  .coin-item {
+    background: var(--hty-bg-color-light, #2a2a36);
+    border-color: var(--hty-border-color, #3a3a4a);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  .coin-name {
+    color: var(--hty-text-color, #e0e0e0);
+  }
+  .coin-count {
+    color: var(--hty-primary-color, #4a9eff);
+  }
+  .total-coins {
+    color: var(--hty-text-color, #ccc);
+  }
+}
+</style><script>// 投币逻辑：无上限，数据存储在 localStorage
+const coins = ['金币', '银币', '铜币', '铁币'];
+
+function initCoinData() {
+  let total = 0;
+  for (let coin of coins) {
+    let val = localStorage.getItem(coin);
+    if (val === null) {
+      val = 0;
+      localStorage.setItem(coin, val);
+    } else {
+      val = parseInt(val);
+    }
+    total += val;
+  }
+  return total;
+}
+
+function updateDisplay() {
+  let total = 0;
+  for (let coin of coins) {
+    let val = parseInt(localStorage.getItem(coin)) || 0;
+    total += val;
+    const coinItem = document.querySelector(`.coin-item[data-coin="${coin}"]`);
+    if (coinItem) {
+      const countSpan = coinItem.querySelector('.coin-count');
+      countSpan.innerText = val;
+      // 按钮永远可用，无上限，所以不需要 disabled 逻辑
+    }
+  }
+  const totalElem = document.getElementById('total-coins-count');
+  if (totalElem) totalElem.innerText = total;
+}
+
+function addCoin(coinName) {
+  let val = parseInt(localStorage.getItem(coinName)) || 0;
+  val++;
+  localStorage.setItem(coinName, val);
+  updateDisplay();
+}
+
+// 页面加载完成后，初始化数据并绑定触发器
+document.addEventListener('DOMContentLoaded', function() {
+  initCoinData();
+  updateDisplay();
+
+  // 触发器：原有的赞助图标
+  const rewardBtn = document.getElementById('reward-button');
+  const funCoinsDiv = document.querySelector('.fun-coins');
+  if (rewardBtn && funCoinsDiv) {
+    rewardBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const isHidden = funCoinsDiv.style.display === 'none';
+      funCoinsDiv.style.display = isHidden ? 'block' : 'none';
+    });
+  }
+
+  // 绑定投币按钮事件（动态监听）
+  document.body.addEventListener('click', function(e) {
+    const btn = e.target.closest('.coin-btn');
+    if (!btn) return;
+    const coinItem = btn.closest('.coin-item');
+    if (coinItem) {
+      const coinName = coinItem.getAttribute('data-coin');
+      addCoin(coinName);
+    }
+  });
+});</script></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/CelesteStrawberry/2026/03/29/%E5%9B%A2%E4%BD%93%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%A4%A9%E6%A2%AF%E8%B5%9B/%E9%A2%98%E7%9B%AE%E7%B4%A2%E5%BC%95/" rel="prev" title="题目索引"><span class="icon iconify" data-icon="ri:arrow-left-s-line"></span><span class="post-nav-text">题目索引</span></a></div><div class="post-nav-item"></div></div><div class="like-fav-buttons"><div class="like-btn-wrapper"><button class="like-btn" title="点赞"><span style="font-size:1.2rem">👍</span><!--span.like-count 0--></button></div><div class="fav-btn-wrapper"><button class="fav-btn" title="收藏"><span class="iconify" data-icon="ri:star-line"></span></button></div></div><style>.like-fav-buttons {
+  position: fixed;
+  right: 20px;
+  bottom: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1000;
+}
+
+.like-fav-buttons button {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--hty-card-bg, #fff);
+  border: 1px solid var(--hty-border-color, #ddd);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  transition: all 0.2s;
+  color: var(--hty-text-color, #333);
+}
+
+.like-fav-buttons button:hover {
+  transform: scale(1.05);
+  background: var(--hty-primary-color, #0078e7);
+  color: white;
+}
+
+.like-fav-buttons .iconify {
+  font-size: 1.4rem;
+}
+
+.like-count {
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+.fav-btn.favorited .iconify {
+  color: #ff9800;
+}
+
+.like-btn.liked {
+  background: #0078e7;
+  color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+  .like-fav-buttons button {
+    background: var(--hty-card-bg, #2d2d3a);
+    border-color: var(--hty-border-color, #444);
+    color: var(--hty-text-color, #eee);
+  }
+}
+</style><script>(function () {
+  const path = window.location.pathname;
+  const likeKey = `like_${path}`;           // 点赞总数
+  const userLikeKey = `like_${path}_liked`;  // 当前用户是否点赞
+  const favKey = `fav_${path}`;
+
+  // 点赞总数
+  let likeCount = localStorage.getItem(likeKey);
+  if (likeCount === null) {
+    likeCount = 0;
+    localStorage.setItem(likeKey, likeCount);
+  } else {
+    likeCount = parseInt(likeCount);
+  }
+
+  // 当前用户是否已点赞
+  let isLiked = localStorage.getItem(userLikeKey) === 'true';
+
+  // 收藏状态
+  let isFavorited = localStorage.getItem(favKey) === 'true';
+
+  const likeBtn = document.querySelector('.like-btn');
+  const likeCountSpan = document.querySelector('.like-count');
+  const favBtn = document.querySelector('.fav-btn');
+  const favIcon = favBtn?.querySelector('.iconify');
+
+  // 初始化显示
+  if (likeCountSpan) likeCountSpan.innerText = likeCount;
+  if (isLiked && likeBtn) {
+    likeBtn.classList.add('liked');
+  } else {
+    likeBtn?.classList.remove('liked');
+  }
+
+  if (isFavorited && favBtn) {
+    favBtn.classList.add('favorited');
+    favIcon?.setAttribute('data-icon', 'ri:star-fill');
+  } else {
+    favBtn?.classList.remove('favorited');
+    favIcon?.setAttribute('data-icon', 'ri:star-line');
+  }
+
+  // 点赞按钮：切换逻辑（可取消）
+  if (likeBtn) {
+    likeBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (isLiked) {
+        // 取消点赞
+        likeCount--;
+        localStorage.setItem(likeKey, likeCount);
+        localStorage.setItem(userLikeKey, 'false');
+        isLiked = false;
+        likeBtn.classList.remove('liked');
+      } else {
+        // 点赞
+        likeCount++;
+        localStorage.setItem(likeKey, likeCount);
+        localStorage.setItem(userLikeKey, 'true');
+        isLiked = true;
+        likeBtn.classList.add('liked');
+      }
+      likeCountSpan.innerText = likeCount;
+      likeBtn.style.transform = 'scale(1.2)';
+      setTimeout(() => {
+        likeBtn.style.transform = '';
+      }, 200);
+    });
+  }
+
+  // 收藏按钮：切换逻辑
+  if (favBtn) {
+    favBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (isFavorited) {
+        localStorage.setItem(favKey, 'false');
+        isFavorited = false;
+        favBtn.classList.remove('favorited');
+        favIcon?.setAttribute('data-icon', 'ri:star-line');
+      } else {
+        localStorage.setItem(favKey, 'true');
+        isFavorited = true;
+        favBtn.classList.add('favorited');
+        favIcon?.setAttribute('data-icon', 'ri:star-fill');
+      }
+      favBtn.style.transform = 'scale(1.2)';
+      setTimeout(() => {
+        favBtn.style.transform = '';
+      }, 200);
+    });
+  }
+})();</script></div><div class="hty-card" id="comment"><style>.utterances {
   max-width: 100%;
 }</style><script src="https://giscus.app/client.js" data-repo="Math-DUT/CelesteStrawberry" data-repo-id="R_kgDORzpAGA" data-category="Announcements" data-category-id="DIC_kwDORzpAGM4C5hMA" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-theme="light" crossorigin="anonymous" async></script></div></main><footer class="sidebar-translate" id="footer"><!--.copyright--><!--  - var nowYear = date(Date.now(), "YYYY")--><!--  span--><!--    | &copy;--><!--    if theme.footer.since && theme.footer.since != nowYear--><!--      | #{theme.footer.since} –--><!--    | #{nowYear}if theme.footer.icon.url
   a#animate.with-love(href=theme.footer.icon.url, title=theme.footer.icon.title)
