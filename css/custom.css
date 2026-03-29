@@ -5,7 +5,7 @@ body {
 }
 #bg {
     opacity: 0.35;
-    background-image: url('/hexo-blog/images/preview.jpg') !important;
+    background-image: url('/CelesteStrawberry/images/preview.jpg') !important;
     background-size: cover !important;
     background-position: center !important;
     display: block !important;
