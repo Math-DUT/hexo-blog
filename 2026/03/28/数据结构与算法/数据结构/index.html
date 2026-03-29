@@ -1,0 +1,556 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="generator" content="Hexo 8.1.1"><meta name="theme" content="hexo-theme-yun"><title>数据结构：从入门到“入土” | Celeste</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/star-markdown-css@0.4.1/dist/yun/yun-markdown.min.css"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/prism-theme-vars/base.css"><script src="https://fastly.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>function initScrollReveal() {
+  [".post-card",".markdown-body img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+}
+document.addEventListener("DOMContentLoaded", initScrollReveal);
+document.addEventListener("pjax:success", initScrollReveal);
+</script><link rel="stylesheet" type="text/css" href="https://fastly.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script defer src="https://fastly.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script><link rel="stylesheet" type="text/css" href="https://fastly.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.css"><script defer src="https://fastly.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script><script defer src="https://fastly.jsdelivr.net/npm/katex@latest/dist/contrib/auto-render.min.js"></script><script type="module">import { renderKatex } from '/js/utils.js'
+document.addEventListener("DOMContentLoaded", () => {
+  renderKatex({
+    ...{},
+    ...undefined?.options,
+  });
+});</script><link rel="icon" type="image/svg+xml" href="/hexo-blog/yun.svg"><link rel="mask-icon" href="/hexo-blog/yun.svg" color="#0078E7"><link rel="preload" href="/hexo-blog/css/hexo-theme-yun.css" as="style"><link rel="prefetch" href="/hexo-blog/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="preconnect" href="https://fastly.jsdelivr.net/npm/" crossorigin><script id="yun-config">
+    window.Yun = {}
+    window.CONFIG = {"hostname":"example.com","root":"/hexo-blog/","title":"草莓先森的小站","version":"1.10.11","mode":"auto","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}.","hits":"${hits} results found","hits_time":"${hits} results found in ${time} ms"},"anonymous_image":"https://cdn.yunyoujun.cn/img/avatar/none.jpg","say":{"api":"https://el-bot-api.vercel.app/api/words/young"},"vendors":{"host":"https://fastly.jsdelivr.net/npm/","darken":"https://fastly.jsdelivr.net/npm/darken@1.5.0"}};
+  </script><style>.code-tabs .code-block ::selection,
+.code-tabs pre::selection {
+  background-color: #4a6e8c;
+  color: #fff;
+}
+/* 代码块字体 */
+pre, code, kbd, samp {
+  font-family: Consolas, Monaco, 'SF Mono', monospace !important;
+}
+pre, code {
+  font-size: 17px !important;
+  line-height: 1.7 !important;
+}
+
+/* 头像圆形裁剪 */
+.site-author-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+.site-author-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+</style><link rel="stylesheet" href="/hexo-blog/css/hexo-theme-yun.css"><link rel="stylesheet" href="/hexo-blog/css/custom.css"><script src="/hexo-blog/js/hexo-theme-yun.js" type="module"></script><script>document.addEventListener('pjax:complete', function() {
+if (typeof renderMathInElement !== 'undefined') {
+renderMathInElement(document.body, {
+delimiters: [
+{left: '$$', right: '$$', display: true},
+{left: '$', right: '$', display: false}
+]
+});
+}
+});</script><meta name="description" content="琐碎往事 (不想看的话直接跳转到第三个标题-数据结构就好啦！Ciallo～(∠・ω&lt; )⌒★) 一切要从我12岁那年说起。 那年家里给我买了一台联想电脑。这在当时的我眼里，可不仅仅是“学习工具”那么简单——那是一扇通往新世界的大门。买电脑的初衷很实际：我当时在“阿斯顿”上英语课，课程需要用电脑上网课，还要完成口语测试。家长觉得这是刚需，于是咬咬牙，把这台银灰色的大家伙搬回了家。 然而，对于">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构：从入门到“入土”">
+<meta property="og:url" content="http://example.com/2026/03/28/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.html">
+<meta property="og:site_name" content="Celeste">
+<meta property="og:description" content="琐碎往事 (不想看的话直接跳转到第三个标题-数据结构就好啦！Ciallo～(∠・ω&lt; )⌒★) 一切要从我12岁那年说起。 那年家里给我买了一台联想电脑。这在当时的我眼里，可不仅仅是“学习工具”那么简单——那是一扇通往新世界的大门。买电脑的初衷很实际：我当时在“阿斯顿”上英语课，课程需要用电脑上网课，还要完成口语测试。家长觉得这是刚需，于是咬咬牙，把这台银灰色的大家伙搬回了家。 然而，对于">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-03-28T02:26:04.790Z">
+<meta property="article:modified_time" content="2026-03-29T09:48:22.516Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary"><style>.highlight,
+.highlight pre,
+.highlight table,
+.highlight td,
+.highlight .gutter,
+.highlight .code {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* 复制按钮容器 */
+.code-block {
+  position: relative; /* 使按钮绝对定位相对于代码块 */
+}
+
+.copy-btn {
+  font-family: 'Maple Mono NF CN Medium';
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 4px 8px;
+  font-size: 12px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: 10;
+}
+
+.code-block:hover .copy-btn {
+  opacity: 1;
+}
+
+.copy-btn.copied {
+  background: #28a745;
+}
+</style><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script><script>document.addEventListener('DOMContentLoaded', function() {
+hljs.highlightAll();
+});
+</script><script>class Circle {
+constructor({ origin, speed, color, angle, context }) {
+this.origin = origin
+this.position = { ...this.origin }
+this.color = color
+this.speed = speed
+this.angle = angle
+this.context = context
+this.renderCount = 0
+}
+draw() {
+this.context.fillStyle = this.color
+this.context.beginPath()
+this.context.arc(this.position.x, this.position.y, 2, 0, Math.PI * 2)
+this.context.fill()
+}
+move() {
+this.position.x = (Math.sin(this.angle) * this.speed) + this.position.x
+this.position.y = (Math.cos(this.angle) * this.speed) + this.position.y + (this.renderCount * 0.3)
+this.renderCount++
+}
+}
+
+class Boom {
+constructor({ origin, context, circleCount = 16, area }) {
+this.origin = origin
+this.context = context
+this.circleCount = circleCount
+this.area = area
+this.stop = false
+this.circles = []
+}
+randomArray(range) {
+const length = range.length
+const randomIndex = Math.floor(length * Math.random())
+return range[randomIndex]
+}
+randomColor() {
+const range = ['8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
+return '#' + this.randomArray(range) + this.randomArray(range) + this.randomArray(range) + this.randomArray(range) + this.randomArray(range) + this.randomArray(range)
+}
+randomRange(start, end) {
+return (end - start) * Math.random() + start
+}
+init() {
+for (let i = 0; i < this.circleCount; i++) {
+const circle = new Circle({
+context: this.context,
+origin: this.origin,
+color: this.randomColor(),
+angle: this.randomRange(Math.PI - 1, Math.PI + 1),
+speed: this.randomRange(1, 6)
+})
+this.circles.push(circle)
+}
+}
+move() {
+this.circles.forEach((circle, index) => {
+if (circle.position.x > this.area.width || circle.position.y > this.area.height) {
+return this.circles.splice(index, 1)
+}
+circle.move()
+})
+if (this.circles.length == 0) {
+this.stop = true
+}
+}
+draw() {
+this.circles.forEach(circle => circle.draw())
+}
+}
+
+class CursorSpecialEffects {
+constructor() {
+this.computerCanvas = document.createElement('canvas')
+this.renderCanvas = document.createElement('canvas')
+this.computerContext = this.computerCanvas.getContext('2d')
+this.renderContext = this.renderCanvas.getContext('2d')
+this.globalWidth = window.innerWidth
+this.globalHeight = window.innerHeight
+this.booms = []
+this.running = false
+}
+handleMouseDown(e) {
+const boom = new Boom({
+origin: { x: e.clientX, y: e.clientY },
+context: this.computerContext,
+area: { width: this.globalWidth, height: this.globalHeight }
+})
+boom.init()
+this.booms.push(boom)
+this.running || this.run()
+}
+handlePageHide() {
+this.booms = []
+this.running = false
+}
+init() {
+const style = this.renderCanvas.style
+style.position = 'fixed'
+style.top = style.left = 0
+style.zIndex = '999999999999999999999999999999999999999999'
+style.pointerEvents = 'none'
+style.width = this.renderCanvas.width = this.computerCanvas.width = this.globalWidth
+style.height = this.renderCanvas.height = this.computerCanvas.height = this.globalHeight
+document.body.append(this.renderCanvas)
+window.addEventListener('mousedown', this.handleMouseDown.bind(this))
+window.addEventListener('pagehide', this.handlePageHide.bind(this))
+}
+run() {
+this.running = true
+if (this.booms.length == 0) {
+return this.running = false
+}
+requestAnimationFrame(this.run.bind(this))
+this.computerContext.clearRect(0, 0, this.globalWidth, this.globalHeight)
+this.renderContext.clearRect(0, 0, this.globalWidth, this.globalHeight)
+this.booms.forEach((boom, index) => {
+if (boom.stop) {
+return this.booms.splice(index, 1)
+}
+boom.move()
+boom.draw()
+})
+this.renderContext.drawImage(this.computerCanvas, 0, 0, this.globalWidth, this.globalHeight)
+}
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+const cursorSpecialEffects = new CursorSpecialEffects();
+cursorSpecialEffects.init();
+});</script><div id="bg" style="background-image: url('/hexo-blog/images/preview.jpg');"></div><script>(function() {
+const words = ["比比拉布", "我的刀盾", "咕咕嘎嘎", "我要验牌", "给我擦皮鞋", "辛巴巴"];
+let wordIndex = 0;
+document.addEventListener('click', function(e) {
+const word = words[wordIndex];
+const span = document.createElement('span');
+span.textContent = word;
+span.style.cssText = `
+      position: fixed;
+      z-index: 999999;
+      top: ${e.clientY - 28}px;
+      left: ${e.clientX - word.length * 8}px;
+      color: rgb(${~~(255 * Math.random())}, ${~~(255 * Math.random())}, ${~~(255 * Math.random())});
+      font-size: 16px;
+      font-weight: bold;
+      pointer-events: none;
+      opacity: 1;
+      transition: all 1.5s ease-out;
+    `;
+document.body.appendChild(span);
+setTimeout(() => {
+span.style.top = `${e.clientY - 180}px`;
+span.style.opacity = '0';
+}, 10);
+setTimeout(() => {
+span.remove();
+}, 1500);
+wordIndex = (wordIndex + 1) % words.length;
+});
+})();
+</script><style>/* 更高优先级 */
+html body {
+  font-size: 20px;
+}
+
+/* 或者限定在文章区域 */
+.post-body, .post-body p {
+  font-size: 23px;
+}
+.code-tabs {
+  margin: 1.5em 0;
+  border: 1px solid #e1e4e8;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.code-tabs-nav {
+  display: flex;
+  background: #f6f8fa;
+  border-bottom: 1px solid #e1e4e8;
+}
+.code-tab {
+  color: white !important;
+  border: none;
+  background: none;
+  padding: 8px 16px;
+  font-size: 17px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+}
+.code-tab.active {
+  border-bottom-color: #0366d6;
+  color: white !important;
+  border-bottom-color: #2f81f7;
+  font-weight: 500;
+}
+.code-tabs-content {
+  position: relative;
+}
+.code-block {
+  display: none;
+  margin: 0;
+  padding: 16px;
+  overflow-x: auto;
+}
+.code-block.active {
+  display: block;
+}
+@media (prefers-color-scheme: dark) {
+  .code-tabs {
+    border-color: #30363d;
+  }
+  .code-tabs-nav {
+    background: #0d1117;
+    border-bottom-color: #30363d;
+  }
+  .code-tab.active {
+    border-bottom-color: #2f81f7;
+    color: #2f81f7;
+  }
+}
+</style><script>document.addEventListener('DOMContentLoaded', function() {
+function waitForHighlight(cb) {
+if (typeof hljs !== 'undefined') {
+cb();
+} else {
+setTimeout(() => waitForHighlight(cb), 50);
+}
+}
+
+waitForHighlight(function() {
+const containers = document.querySelectorAll('.code-tabs');
+if (!containers.length) return;
+
+function highlightBlock(block) {
+const codes = block.querySelectorAll('pre code');
+codes.forEach(code => {
+try {
+hljs.highlightElement(code);
+} catch (e) {
+console.warn('Highlight failed', e);
+}
+});
+}
+
+containers.forEach(container => {
+const tabs = container.querySelectorAll('.code-tab');
+const blocks = container.querySelectorAll('.code-block');
+// 初始高亮当前激活的块
+const activeBlock = container.querySelector('.code-block.active');
+if (activeBlock) highlightBlock(activeBlock);
+
+tabs.forEach(tab => {
+tab.addEventListener('click', function() {
+const lang = this.dataset.lang;
+tabs.forEach(t => t.classList.remove('active'));
+this.classList.add('active');
+blocks.forEach(block => {
+if (block.dataset.lang === lang) {
+block.classList.add('active');
+highlightBlock(block);
+} else {
+block.classList.remove('active');
+}
+});
+});
+});
+});
+});
+});</script><script>document.addEventListener('DOMContentLoaded', function() {
+// 为每个代码块添加复制按钮
+const codeBlocks = document.querySelectorAll('.code-block');
+codeBlocks.forEach(block => {
+// 避免重复添加
+if (block.querySelector('.copy-btn')) return;
+
+const btn = document.createElement('button');
+btn.className = 'copy-btn';
+btn.textContent = 'COPY';
+block.appendChild(btn);
+
+btn.addEventListener('click', async function(e) {
+e.stopPropagation();
+// 获取代码文本（从 <pre><code> 中提取）
+const codeElem = block.querySelector('pre code');
+const text = codeElem ? codeElem.innerText : '';
+if (!text) return;
+
+try {
+await navigator.clipboard.writeText(text);
+btn.textContent = 'COPIED!';
+btn.classList.add('copied');
+setTimeout(() => {
+btn.textContent = 'COPY';
+btn.classList.remove('copied');
+}, 2000);
+} catch (err) {
+console.error('复制失败', err);
+btn.textContent = 'FAILED';
+setTimeout(() => btn.textContent = 'COPY', 1000);
+}
+});
+});
+});</script><script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script>(function() {
+  if (CONFIG.mode !== 'auto') return
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+  const setting = localStorage.getItem('darken-mode') || 'auto'
+  if (setting === 'dark' || (prefersDark && setting !== 'light'))
+    document.documentElement.classList.toggle('dark', true)
+})()</script></head><body><script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script><script>// Define global variable
+IconifyProviders = {
+  // Empty prefix: overwrite default API provider configuration
+  '': {
+    // Use custom API first, use Iconify public API as backup
+    resources: [
+        'https://api.iconify.design',
+    ],
+    // Wait for 1 second before switching API hosts
+    rotate: 1000,
+  },
+};</script><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/hexo-blog/js/sidebar.js" type="module"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="Table of Contents"><span class="icon iconify" data-icon="ri:list-ordered"></span></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="Overview"><span class="icon iconify" data-icon="ri:passport-line"></span></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/hexo-blog/about/" title="John Doe"><img width="96" loading="lazy" src="/hexo-blog/images/avatar.jpg" alt="John Doe"></a><div class="site-author-name"><a href="/hexo-blog/about/">John Doe</a></div><span class="site-name">Celeste</span><sub class="site-subtitle">你好</sub><div class="site-description"></div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/hexo-blog/" title="Home"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:home-4-line"></span></span></a><div class="site-state-item"><a href="/hexo-blog/archives/" title="Archives"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:archive-line"></span></span><span class="site-state-item-count">2</span></a></div><div class="site-state-item"><a href="/hexo-blog/categories/" title="Categories"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:folder-2-line"></span></span><span class="site-state-item-count">2</span></a></div><div class="site-state-item"><a href="/hexo-blog/tags/" title="Tags"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="site-state-item-count">0</span></a></div><a class="site-state-item hty-icon-button" href="https://yun.yunyoujun.cn" title="文档"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:settings-line"></span></span></a></nav><hr style="margin-bottom:0.5rem"><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/hexo-blog/links/" title="我的小伙伴们" style="color:dodgerblue"><span class="icon iconify" data-icon="ri:genderless-line"></span></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><span class="icon iconify" data-icon="ri:contrast-2-line"></span></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%90%90%E7%A2%8E%E5%BE%80%E4%BA%8B"><span class="toc-number">1.</span> <span class="toc-text"> 琐碎往事</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">2.</span> <span class="toc-text"> 前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-number">3.</span> <span class="toc-text"> 数据结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-number">3.1.</span> <span class="toc-text"> 概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.2.</span> <span class="toc-text"> 常见类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E8%AF%AD"><span class="toc-number">4.</span> <span class="toc-text"> 结语</span></a></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article" style="--smc-primary:#0078E7;"><link itemprop="mainEntityOfPage" href="http://example.com/hexo-blog/2026/03/28/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="John Doe"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="Celeste"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">数据结构：从入门到“入土”</h1><div class="post-meta"><div class="post-time"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-line"></span></span> <time title="Created: 2026-03-28 10:26:04" itemprop="dateCreated datePublished" datetime="2026-03-28T10:26:04+08:00">2026-03-28</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-2-line"></span></span> <time title="Modified: 2026-03-29 17:48:22" itemprop="dateModified" datetime="2026-03-29T17:48:22+08:00">2026-03-29</time></div><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><span class="icon iconify" data-icon="ri:folder-line"></span></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/hexo-blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">数据结构</span></a></span></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body"><h2 id="琐碎往事"><a class="markdownIt-Anchor" href="#琐碎往事"></a> 琐碎往事</h2>
+<p><s>(不想看的话直接跳转到第三个标题-数据结构就好啦！Ciallo～(∠・ω&lt; )⌒★)</s></p>
+<p>一切要从我12岁那年说起。</p>
+<p>那年家里给我买了一台联想电脑。这在当时的我眼里，可不仅仅是“学习工具”那么简单——那是一扇通往新世界的大门。买电脑的初衷很实际：我当时在“阿斯顿”上英语课，课程需要用电脑上网课，还要完成口语测试。家长觉得这是刚需，于是咬咬牙，把这台银灰色的大家伙搬回了家。</p>
+<p>然而，对于一个12岁的孩子来说，什么网课、什么口语测试，统统都不重要。我满脑子只装着一件事：<span style="color: red;">4399小游戏</span>。</p>
+<p>现在回想起来，那真是一段纯粹的快乐时光。周末写完作业，悄悄打开浏览器，在地址栏里一个字母一个字母地敲下那个熟悉到不行的网址。赛尔号、摩尔庄园、造梦西游、闪客快打……每一款游戏都像是一扇新的窗户，让我看到一个个奇妙的世界。我可以在里面控制角色奔跑、跳跃、战斗，仿佛自己就是那个屏幕里的英雄。</p>
+<p>但玩着玩着，一个问题开始在我心里生根发芽：<span style="color: red;">这些游戏，到底是怎么做出来的</span>？</p>
+<p>它们是怎么做到我一按方向键，角色就跑起来的？怎么做到我一点鼠标，子弹就飞出去的？那个世界里的规则是谁定的？为什么有的怪物一击就死，有的要打好多下？</p>
+<p>这些问题让我着迷，甚至超过了游戏本身。</p>
+<p>于是我开始自己去找答案。当时上网还不像现在这么方便，我只能趁父母不在的时候，在搜索引擎里笨拙地输入一些我自己都描述不清的问题。“游戏是怎么做的”“怎么自己造游戏”“4399的游戏谁做的”……翻过无数个网页之后，我隐约听到一个词：HTML5。</p>
+<p>那时候的我其实根本不懂HTML5是什么，只模模糊糊地知道：游戏不是天上掉下来的，也不是魔法变出来的——它们是人用“代码”写出来的。那些让我沉迷的关卡、角色、特效，背后是一行一行我看不懂的字母和符号。</p>
+<p>这个认知对我冲击很大。</p>
+<p>就好像你一直在吃美味的蛋糕，突然有一天发现，原来这些蛋糕不是从超市货架上长出来的，而是一个叫“烘焙师”的人，用面粉、鸡蛋、糖一点一点做出来的。而且——你也可能成为那个烘焙师。</p>
+<p>我对写代码的兴趣，就是从那一刻开始的。</p>
+<p>那天晚饭的时候，我跟父母说了一句话，具体怎么说的记不太清了，大概意思是：“我想学怎么做游戏，我想学写代码。”</p>
+<p>我记得父母对视了一眼，表情里有点意外，但没有拒绝。</p>
+<p>没过多久，他们告诉我：帮我找了个编程班。当时市面上比较火的青少年编程语言是C++，很多信息学竞赛都用的这个。于是我就这样，连C++是什么都没搞清楚，就稀里糊涂地报了一个网课。</p>
+<p>我的信息学竞赛学习之旅，就这样误打误撞地开始了。</p>
+<h2 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h2>
+<p>那么在本系列博客中我将讲解我的信竞学习之路，这里就先从数据结构开始吧！</p>
+<p>说实话，我在跟着辅导班上网课的时候，认为数据结构无非是整数，浮点数，数组这些简单的东西，几乎没有系统的学习它们…哈哈哈，想起来还真是可笑，我居然忽视了算法竞赛里面最最重要的东西！<s>（看着无数大佬灵活使用C++内部库容器疯狂解题…顿时感觉自己low爆了…）</s></p>
+<p>为了弥补自己过去的无知，现在我就详细地说说什么是数据结构。</p>
+<h2 id="数据结构"><a class="markdownIt-Anchor" href="#数据结构"></a> 数据结构</h2>
+<h3 id="概念"><a class="markdownIt-Anchor" href="#概念"></a> 概念</h3>
+<p><span style="color: red;"><strong>数据结构</strong></span>是计算机科学中一个核心基础概念。简单来说，它是<span style="color: red;"><strong>计算机存储、组织数据的方式</strong></span>。</p>
+<p>简单来说，数据结构就是计算机存放数据的“工具箱”。不同的工具，适合不同的场景——选对了，存取数据又快又省力；选错了，就像用汤勺挖土，累死还干不好。</p>
+<p>更严谨的，我们可以从两个维度来理解它：</p>
+<span style="font-size: 20px;">
+<ul>
+<li><strong>逻辑结构</strong>：数据元素之间存在的逻辑关系。比如，一个班的学生名单，逻辑上就是一个线性列表；公司的组织结构图，逻辑上就是一棵树。</li>
+<li><strong>物理结构（存储结构）</strong>：这种逻辑关系在计算机内存中实际是如何存储和表示的。比如，数据是连续存放在一块内存里，还是通过指针链接在不同地方。</li>
+</ul>
+</span>
+<p>在这里，有一个经典的公式：</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>程序</mtext><mo stretchy="false">(</mo><mi>P</mi><mi>r</mi><mi>o</mi><mi>g</mi><mi>r</mi><mi>a</mi><mi>m</mi><mi>m</mi><mi>i</mi><mi>n</mi><mi>g</mi><mo stretchy="false">)</mo><mo>=</mo><mtext>数据结构</mtext><mo stretchy="false">(</mo><mi>D</mi><mi>a</mi><mi>t</mi><mi>a</mi><mi>S</mi><mi>t</mi><mi>r</mi><mi>u</mi><mi>c</mi><mi>t</mi><mi>u</mi><mi>r</mi><mi>e</mi><mo stretchy="false">)</mo><mo>+</mo><mtext>算法</mtext><mo stretchy="false">(</mo><mi>A</mi><mi>l</mi><mi>g</mi><mi>o</mi><mi>r</mi><mi>i</mi><mi>s</mi><mi>m</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">程序(Programming)=数据结构(Data Structure)+算法(Algorism)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord cjk_fallback">程</span><span class="mord cjk_fallback">序</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">a</span><span class="mord mathnormal">m</span><span class="mord mathnormal">m</span><span class="mord mathnormal">i</span><span class="mord mathnormal">n</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord cjk_fallback">数</span><span class="mord cjk_fallback">据</span><span class="mord cjk_fallback">结</span><span class="mord cjk_fallback">构</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mord mathnormal">a</span><span class="mord mathnormal">t</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mord mathnormal">t</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">u</span><span class="mord mathnormal">c</span><span class="mord mathnormal">t</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">e</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord cjk_fallback">算</span><span class="mord cjk_fallback">法</span><span class="mopen">(</span><span class="mord mathnormal">A</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">i</span><span class="mord mathnormal">s</span><span class="mord mathnormal">m</span><span class="mclose">)</span></span></span></span></span></p>
+<span style="font-size: 20px;">
+<ul>
+<li><strong>数据结构</strong> 负责解决数据“如何存”的问题。</li>
+<li><strong>算法</strong> 负责解决数据“如何算”（处理）的问题。</li>
+</ul>
+</span>
+<p>如果数据结构设计得不合理，再好的算法也难以发挥效力；反之，好的数据结构甚至可以让算法变得更加简单高效。</p>
+<p>再来说说数据结构的两个维度的具体细节：</p>
+<span style="font-size: 20px;">
+<ul>
+<li>
+<p>逻辑结构：数据的逻辑结构主要分为<strong>线性结构</strong>和<strong>非线性结构</strong>。</p>
+<span style="font-size: 18px;">
+<ul>
+<li>线性结构：数据结构的元素之间存在一对一线性关系，所有结点都最多<span style="color: red;">只有一个直接前趋结点和一个直接后继结点</span>。常见的有<strong>数组、队列、链表、栈</strong>。</li>
+<li>非线性结构：各个结点之间具有多个对应关系，一个结点可能有多个直接前趋结点和多个直接后继结点。常见的有<strong>多维数组、广义表、树结构和图结构</strong>等。</li>
+</ul>
+</span>
+</li>
+<li>
+<p>物理结构：表示数据元素之间的逻辑关系，一种数据结构的逻辑结构根据需要可以表示成多种<span style="color: red;"><strong>存储结构</strong></span>，常用的存储结构有：</p>
+<span style="font-size: 18px;">
+<ul>
+<li><strong>顺序存储</strong>（<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mi>a</mi><mi>s</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">Easy</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mord mathnormal">a</span><span class="mord mathnormal">s</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span>）：存储顺序是连续的，在内存中用一组地址连续的存储单元依次存储线性表的各个数据元素。</li>
+<li><strong>链式存储</strong>（<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mi>a</mi><mi>s</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">Easy</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mord mathnormal">a</span><span class="mord mathnormal">s</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span>）：在内存中的存储元素不一定是连续的，用任意地址的存储单元存储元素，元素节点存放数据元素以及通过指针指向相邻元素的地址信息。</li>
+<li><strong>索引存储</strong>（<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mi>e</mi><mi>d</mi><mi>i</mi><mi>u</mi><mi>m</mi></mrow><annotation encoding="application/x-tex">Medium</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mord mathnormal">e</span><span class="mord mathnormal">d</span><span class="mord mathnormal">i</span><span class="mord mathnormal">u</span><span class="mord mathnormal">m</span></span></span></span>）：除建立存储结点信息外，还建立附加的索引表来标识节点的地址。索引表由若干索引项组成。</li>
+<li><strong>散列存储</strong>（<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mi>a</mi><mi>r</mi><mi>d</mi></mrow><annotation encoding="application/x-tex">Hard</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">d</span></span></span></span>）：又称Hash存储，由节点的关键码值决定节点的存储地址。</li>
+</ul>
+</span>
+</li>
+</ul>
+<p><span style="font-size: 17px;">（<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mi>a</mi><mi>s</mi><mi>y</mi><mo separator="true">,</mo><mi>M</mi><mi>e</mi><mi>d</mi><mi>i</mi><mi>u</mi><mi>m</mi><mo separator="true">,</mo><mi>H</mi><mi>a</mi><mi>r</mi><mi>d</mi></mrow><annotation encoding="application/x-tex">Easy, Medium, Hard</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mord mathnormal">a</span><span class="mord mathnormal">s</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mord mathnormal">e</span><span class="mord mathnormal">d</span><span class="mord mathnormal">i</span><span class="mord mathnormal">u</span><span class="mord mathnormal">m</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">d</span></span></span></span>表示掌握难度）</span></p>
+</span>
+<h3 id="常见类型"><a class="markdownIt-Anchor" href="#常见类型"></a> 常见类型</h3>
+<p>常见的数据结构有8种（<s>太多了bushi</s>）</p>
+<span style="font-size: 20px;">
+<ul>
+<li>数组（<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mi>r</mi><mi>r</mi><mi>a</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">Array</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">A</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span>）</li>
+<li>队列（<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mi>u</mi><mi>e</mi><mi>u</mi><mi>e</mi></mrow><annotation encoding="application/x-tex">Queue</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">Q</span><span class="mord mathnormal">u</span><span class="mord mathnormal">e</span><span class="mord mathnormal">u</span><span class="mord mathnormal">e</span></span></span></span>）</li>
+<li>链表（<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mi>i</mi><mi>n</mi><mi>k</mi><mi>e</mi><mi>d</mi><mi>L</mi><mi>i</mi><mi>s</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">Linked List</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">L</span><span class="mord mathnormal">i</span><span class="mord mathnormal">n</span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mord mathnormal">e</span><span class="mord mathnormal">d</span><span class="mord mathnormal">L</span><span class="mord mathnormal">i</span><span class="mord mathnormal">s</span><span class="mord mathnormal">t</span></span></span></span>）</li>
+<li>栈（<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mi>t</mi><mi>a</mi><mi>c</mi><mi>k</mi></mrow><annotation encoding="application/x-tex">Stack</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mord mathnormal">t</span><span class="mord mathnormal">a</span><span class="mord mathnormal">c</span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span>）</li>
+<li>树（<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mi>r</mi><mi>e</mi><mi>e</mi></mrow><annotation encoding="application/x-tex">Tree</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">e</span><span class="mord mathnormal">e</span></span></span></span>）</li>
+<li>散列表（哈希表）（<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mi>a</mi><mi>s</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">Hash</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="mord mathnormal">a</span><span class="mord mathnormal">s</span><span class="mord mathnormal">h</span></span></span></span>）</li>
+<li>堆（<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mi>e</mi><mi>a</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">Heap</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="mord mathnormal">e</span><span class="mord mathnormal">a</span><span class="mord mathnormal">p</span></span></span></span>）</li>
+<li>图（<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mi>r</mi><mi>a</mi><mi>p</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">Graph</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">G</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">a</span><span class="mord mathnormal">p</span><span class="mord mathnormal">h</span></span></span></span>）</li>
+</ul>
+</span>
+<p>在今后的讲解中，我将对上述8种数据结构进行详细的代码，图像演示以及例题分析。</p>
+<p>同时在每篇文章的最后都会有：<a href="/categories">点我（Click me!!!）</a>，这一操作会回到主文件夹，要找自己想要的学的东西就很容易啦！</p>
+<h2 id="结语"><a class="markdownIt-Anchor" href="#结语"></a> 结语</h2>
+<p>各位有兴趣可以关注我的小破站帐号呀！</p>
+<p>点击这里：<a href="https://space.bilibili.com/3546735102134382?spm_id_from=333.1007.0.0">Celeste草莓先森的主页</a></p>
+<p>各位观众老爷点个一键三连支持吧！球球了┭┮﹏┭┮…</p>
+<p>最后，献上每位学习程序的人“梦开始的地方”🤭</p>
+<div class="code-tabs">
+  <div class="code-tabs-nav">
+    <button class="code-tab active" data-lang="cpp" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">C++</button>
+    <button class="code-tab" data-lang="python" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">Python</button>
+    <button class="code-tab" data-lang="java" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">Java</button>
+    <button class="code-tab" data-lang="c" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">C</button>
+    <button class="code-tab" data-lang="javascript" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">JavaScript</button>
+  </div>
+  <div class="code-tabs-content">
+    <div class="code-block active" data-lang="cpp">
+      <pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+int main() {
+    cout << "Hello World!" << endl;
+    return 0;
+}</code></pre>
+    </div>
+    <div class="code-block" data-lang="python">
+      <pre><code class="language-python">print("Hello World!")</code></pre>
+    </div>
+    <div class="code-block" data-lang="java">
+      <pre><code class="language-java">public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello World!");
+    }
+}</code></pre>
+    </div>
+    <div class="code-block" data-lang="c">
+      <pre><code class="language-c">#include &lt;stdio.h&gt;
+int main() {
+    printf("Hello World!\n");
+    return 0;
+}</code></pre>
+    </div>
+    <div class="code-block" data-lang="javascript">
+      <pre><code class="language-javascript">console.log("Hello World!");</code></pre>
+    </div>
+  </div>
+</div></div></section><div id="reward-container"><span class="hty-icon-button button-glow" id="reward-button" title="Donate" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === &quot;none&quot;) ? &quot;block&quot; : &quot;none&quot;;"><span class="icon iconify" data-icon="ri:hand-coin-line"></span></span><div id="reward-comment">I'm so cute. Please give me money.</div></div><ul class="post-copyright"><li class="post-copyright-author"><strong>Post author: </strong>John Doe</li><li class="post-copyright-link"><strong>Post link: </strong><a href="http://example.com/2026/03/28/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="数据结构：从入门到“入土”">http://example.com/2026/03/28/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</a></li><li class="post-copyright-license"><strong>Copyright Notice: </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><span class="icon iconify" data-icon="ri:creative-commons-line"></span><span class="icon iconify" data-icon="ri:creative-commons-by-line"></span><span class="icon iconify" data-icon="ri:creative-commons-nc-line"></span><span class="icon iconify" data-icon="ri:creative-commons-sa-line"></span></a> unless otherwise stated.</li></ul></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/hexo-blog/2026/03/29/%E5%9B%A2%E4%BD%93%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%A4%A9%E6%A2%AF%E8%B5%9B/%E9%A2%98%E7%9B%AE%E7%B4%A2%E5%BC%95/" rel="prev" title="题目索引"><span class="icon iconify" data-icon="ri:arrow-left-s-line"></span><span class="post-nav-text">题目索引</span></a></div><div class="post-nav-item"></div></div></div><div class="hty-card" id="comment"><style>.utterances {
+  max-width: 100%;
+}</style><script src="https://giscus.app/client.js" data-repo="Math-DUT/hexo-blog" data-repo-id="R_kgDORzpAGA" data-category="Announcements" data-category-id="DIC_kwDORzpAGM4C5hMA" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-theme="light" crossorigin="anonymous" async></script></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2019 – 2026 </span><span class="with-love" id="animate"><span class="icon iconify" data-icon="ri:cloud-line"></span></span><span class="author"> John Doe</span></div><div class="powered"><span>Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> v8.1.1</span><span class="footer-separator">|</span><span>Theme - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.10.11</span></div></footer></div><a class="hty-icon-button" id="back-to-top" aria-label="back-to-top" href="#"><span class="icon iconify" data-icon="ri:arrow-up-s-line"></span><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a></body></html>
