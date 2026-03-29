@@ -1,0 +1,145 @@
+/* 强制覆盖代码块字体 */
+/* 全局正文大小 */
+body {
+    font-size: 20px;
+}
+
+/* 文章内容区域（避免影响侧边栏等） */
+.post-body {
+    font-size: 23px;
+}
+pre,
+
+code {
+    font-size: 19px;
+    line-height: 1.5;
+}
+kbd,
+samp {
+    font-family: Consolas, Monaco, 'SF Mono', monospace !important;
+}
+/* 头像容器保持固定尺寸（可自行调整） */
+.site-author-avatar {
+    width: 120px;
+    height: 120px;
+    /*overflow: hidden;     !* 超出部分隐藏，实现裁剪 *!*/
+    border-radius: 50%;   /* 可选：圆形裁剪 */
+}
+
+/* 控制图片的裁剪方式 */
+.site-author-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;          /* 图片覆盖整个容器，可能裁剪部分区域 */
+    object-position: 50% 50%;   /* 指定裁剪中心点（水平 50%，垂直 30%） */
+}
+
+/* 代码选项卡容器 */
+.code-tabs {
+    margin: 1.5em 0;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+/* 选项卡导航栏 */
+.code-tabs-nav {
+    display: flex;
+    background: #f6f8fa;
+    border-bottom: 1px solid #e1e4e8;
+    padding: 0;
+}
+
+.code-tab {
+    border: none;
+    background: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.code-tab.active {
+    border-bottom-color: #0366d6;
+    color: #0366d6;
+    font-weight: 500;
+}
+
+/* 代码块区域 */
+.code-tabs-content {
+    background: #fff;
+}
+
+.code-block {
+    display: none;
+    margin: 0;
+    padding: 16px;
+    background: #f6f8fa;
+    overflow-x: auto;
+}
+
+.code-block.active {
+    display: block;
+}
+
+/* 深色模式适配（如果主题有深色模式） */
+@media (prefers-color-scheme: dark) {
+    .code-tabs {
+        border-color: #30363d;
+    }
+    .code-tabs-nav {
+        background: #0d1117;
+        border-bottom-color: #30363d;
+    }
+    .code-tab.active {
+        border-bottom-color: #2f81f7;
+        color: #2f81f7;
+    }
+    .code-block {
+        background: #0d1117;
+    }
+}
+
+/* 选项卡容器 */
+.code-tabs {
+    margin: 1.5em 0;
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff; /* 与主题背景一致 */
+}
+
+/* 选项卡导航栏 */
+.code-tabs-nav {
+    display: flex;
+    background: #f6f8fa;
+    border-bottom: 1px solid #e1e4e8;
+    padding: 0;
+}
+
+/* 单个选项卡按钮 */
+.code-tab {
+    border: none;
+    background: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+}
+.code-tab.active {
+    border-bottom-color: #0366d6;
+    color: #0366d6;
+    font-weight: 500;
+}
+
+/* 代码块容器 */
+.code-block {
+    display: none;
+}
+.code-block.active {
+    display: block;
+}
