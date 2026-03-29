@@ -61,6 +61,10 @@ samp {
     border-bottom: 1px solid #e1e4e8;
     padding: 0;
 }
+.tag-cloud a, .post-tags a, .tags a, .label {
+    font-size: 17px !important; /* 你想要的大小 */
+    margin: 5px !important;
+}
 
 .code-tab {
     border: none;
