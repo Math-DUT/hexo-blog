@@ -155,3 +155,22 @@ samp {
 .code-block.active {
     display: block;
 }
+.busuanzi-count {
+    text-align: center;
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    color: var(--hty-text-color-light);
+}
+
+/* 页脚整体居中 */
+#footer,
+.footer {
+    text-align: center !important;
+}
+
+/* 如果 Powered by 那一行原本是 flex 布局，也强制居中 */
+#footer .powered,
+.footer .powered {
+    justify-content: center !important;
+    text-align: center !important;
+}
