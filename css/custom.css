@@ -65,7 +65,9 @@ samp {
     font-size: 17px !important; /* 你想要的大小 */
     margin: 5px !important;
 }
-
+.katex {
+    font-size: 20px;  /* 调整为所需大小，也可用 px、rem */
+}
 .code-tab {
     border: none;
     background: none;
