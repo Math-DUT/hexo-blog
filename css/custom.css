@@ -1,8 +1,9 @@
-/* 强制覆盖代码块字体 */
-/* 全局正文大小 */
+/* ========== 全局设置 ========== */
 body {
     font-size: 20px;
 }
+
+/* 背景图 */
 #bg {
     opacity: 0.35;
     background-image: url('/CelesteStrawberry/images/preview.jpg') !important;
@@ -16,128 +17,111 @@ body {
     height: 100% !important;
     z-index: -1 !important;
 }
-/* 文章内容区域（避免影响侧边栏等） */
+
+/* 文章正文 */
 .post-body {
     font-size: 23px;
 }
-pre,
 
-code {
+/* 代码字体 */
+pre, code {
     font-size: 19px;
     line-height: 1.5;
 }
-kbd,
-samp {
+
+kbd, samp {
     font-family: Consolas, Monaco, 'SF Mono', monospace !important;
 }
-/* 头像容器保持固定尺寸（可自行调整） */
+
+/* 头像 */
 .site-author-avatar {
     width: 120px;
     height: 120px;
-    /*overflow: hidden;     !* 超出部分隐藏，实现裁剪 *!*/
-    border-radius: 50%;   /* 可选：圆形裁剪 */
+    border-radius: 50%;
 }
-
-/* 控制图片的裁剪方式 */
 .site-author-avatar img {
     width: 100%;
     height: 100%;
-    object-fit: cover;          /* 图片覆盖整个容器，可能裁剪部分区域 */
-    object-position: 50% 50%;   /* 指定裁剪中心点（水平 50%，垂直 30%） */
+    object-fit: cover;
+    object-position: 50% 50%;
 }
 
-/* 代码选项卡容器 */
-.code-tabs {
-    margin: 1.5em 0;
-    border: 1px solid #e1e4e8;
-    border-radius: 6px;
-    overflow: hidden;
-}
-
-/* 选项卡导航栏 */
-.code-tabs-nav {
-    display: flex;
-    background: #f6f8fa;
-    border-bottom: 1px solid #e1e4e8;
-    padding: 0;
-}
+/* 标签 */
 .tag-cloud a, .post-tags a, .tags a, .label {
-    font-size: 17px !important; /* 你想要的大小 */
+    font-size: 17px !important;
     margin: 5px !important;
 }
+
+/* 数学公式 */
 .katex {
-    font-size: 20px;  /* 调整为所需大小，也可用 px、rem */
-}
-.code-tab {
-    border: none;
-    background: none;
-    padding: 8px 16px;
-    font-size: 14px;
-    font-family: inherit;
-    cursor: pointer;
-    border-bottom: 2px solid transparent;
-    transition: all 0.2s ease;
+    font-size: 20px;
 }
 
-.code-tab.active {
-    border-bottom-color: #0366d6;
-    color: #0366d6;
-    font-weight: 500;
+/* 页脚 */
+.busuanzi-count {
+    text-align: center;
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    color: var(--hty-text-color-light);
+}
+#footer, .footer {
+    text-align: center !important;
+}
+#footer .powered, .footer .powered {
+    justify-content: center !important;
+    text-align: center !important;
 }
 
-/* 代码块区域 */
-.code-tabs-content {
-    background: #fff;
+/* ========== 代码选项卡（核心样式） ========== */
+/* 定义亮色主题变量（默认） */
+:root, .light-theme {
+    --tab-container-bg: #ffffff; !important;         /* 容器背景：白色 */
+    --tab-nav-bg: #ffffff; !important;              /* 导航栏背景：白色 */
+    --tab-border: #e1e4e8;     !important;          /* 边框色 */
+    --tab-inactive-color: #000000;  !important;     /* 未激活选项卡文字：黑色 */
+    --tab-active-color: #0366d6;    !important;     /* 激活选项卡文字：蓝色 */
+    --code-bg: #f6f8fa;          !important;       /* 代码块背景：浅灰（与白色区分） */
+    --code-text: #24292e;         !important;      /* 代码文字：深灰 */
 }
 
-.code-block {
-    display: none;
-    margin: 0;
-    padding: 16px;
-    background: #f6f8fa;
-    overflow-x: auto;
-}
-
-.code-block.active {
-    display: block;
-}
-
-/* 深色模式适配（如果主题有深色模式） */
+/* 深色主题（跟随系统或手动类） */
 @media (prefers-color-scheme: dark) {
-    .code-tabs {
-        border-color: #30363d;
-    }
-    .code-tabs-nav {
-        background: #0d1117;
-        border-bottom-color: #30363d;
-    }
-    .code-tab.active {
-        border-bottom-color: #2f81f7;
-        color: #2f81f7;
-    }
-    .code-block {
-        background: #0d1117;
+    :root {
+        --tab-container-bg: #0d1117;
+        --tab-nav-bg: #0d1117;
+        --tab-border: #30363d;
+        --tab-inactive-color: #e6edf3;
+        --tab-active-color: #2f81f7;
+        --code-bg: #0d1117;
+        --code-text: #e6edf3;
     }
 }
+.dark-theme {
+    --tab-container-bg: #0d1117;
+    --tab-nav-bg: #0d1117;
+    --tab-border: #30363d;
+    --tab-inactive-color: #e6edf3;
+    --tab-active-color: #2f81f7;
+    --code-bg: #0d1117;
+    --code-text: #e6edf3;
+}
 
-/* 选项卡容器 */
+/* 应用变量 */
 .code-tabs {
     margin: 1.5em 0;
-    border: 1px solid #e1e4e8;
+    border: 1px solid var(--tab-border);
     border-radius: 8px;
     overflow: hidden;
-    background: #fff; /* 与主题背景一致 */
+    background: var(--tab-container-bg);
 }
 
-/* 选项卡导航栏 */
 .code-tabs-nav {
     display: flex;
-    background: #f6f8fa;
-    border-bottom: 1px solid #e1e4e8;
+    background: var(--tab-nav-bg);
+    border-bottom: 1px solid var(--tab-border);
     padding: 0;
 }
 
-/* 单个选项卡按钮 */
 .code-tab {
     border: none;
     background: none;
@@ -147,36 +131,23 @@ samp {
     cursor: pointer;
     border-bottom: 2px solid transparent;
     transition: all 0.2s;
+    color: var(--tab-inactive-color);
 }
+
 .code-tab.active {
-    border-bottom-color: #0366d6;
-    color: #0366d6;
+    border-bottom-color: var(--tab-active-color);
+    color: var(--tab-active-color);
     font-weight: 500;
 }
 
-/* 代码块容器 */
 .code-block {
     display: none;
+    margin: 0;
+    padding: 16px;
+    overflow-x: auto;
+    background: var(--code-bg);
+    color: var(--code-text);
 }
 .code-block.active {
     display: block;
-}
-.busuanzi-count {
-    text-align: center;
-    margin: 0.5rem 0;
-    font-size: 0.9rem;
-    color: var(--hty-text-color-light);
-}
-
-/* 页脚整体居中 */
-#footer,
-.footer {
-    text-align: center !important;
-}
-
-/* 如果 Powered by 那一行原本是 flex 布局，也强制居中 */
-#footer .powered,
-.footer .powered {
-    justify-content: center !important;
-    text-align: center !important;
 }
