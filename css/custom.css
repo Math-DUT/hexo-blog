@@ -74,36 +74,73 @@ kbd, samp {
 
 /* ========== 代码选项卡（核心样式） ========== */
 /* 定义亮色主题变量（默认） */
-:root, .light-theme {
-    --tab-container-bg: #ffffff; !important;         /* 容器背景：白色 */
-    --tab-nav-bg: #ffffff; !important;              /* 导航栏背景：白色 */
-    --tab-border: #e1e4e8;     !important;          /* 边框色 */
-    --tab-inactive-color: #000000;  !important;     /* 未激活选项卡文字：黑色 */
-    --tab-active-color: #0366d6;    !important;     /* 激活选项卡文字：蓝色 */
-    --code-bg: #f6f8fa;          !important;       /* 代码块背景：浅灰（与白色区分） */
-    --code-text: #24292e;         !important;      /* 代码文字：深灰 */
+:root {
+    --tab-container-bg: #ffffff !important;
+    --tab-nav-bg: #f6f8fa !important;
+    --tab-border: #d0d7de !important;
+    --tab-inactive-color: #24292f !important;
+    --tab-active-color: #0969da !important;
+    --code-bg: #f6f8fa !important;
+    --code-text: #24292f !important;
+    --code-block-bg: #f6f8fa !important;
 }
 
-/* 深色主题（跟随系统或手动类） */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --tab-container-bg: #0d1117;
-        --tab-nav-bg: #0d1117;
-        --tab-border: #30363d;
-        --tab-inactive-color: #e6edf3;
-        --tab-active-color: #2f81f7;
-        --code-bg: #0d1117;
-        --code-text: #e6edf3;
-    }
+/* 深色主题 - 使用 html.dark 类匹配主题实现 */
+html.dark {
+    --tab-container-bg: #0d1117 !important;
+    --tab-nav-bg: #161b22 !important;
+    --tab-border: #30363d !important;
+    --tab-inactive-color: #c9d1d9 !important;
+    --tab-active-color: #58a6ff !important;
+    --code-bg: #0d1117 !important;
+    --code-text: #c9d1d9 !important;
+    --code-block-bg: #161b22 !important;
 }
-.dark-theme {
-    --tab-container-bg: #0d1117;
-    --tab-nav-bg: #0d1117;
-    --tab-border: #30363d;
-    --tab-inactive-color: #e6edf3;
-    --tab-active-color: #2f81f7;
-    --code-bg: #0d1117;
-    --code-text: #e6edf3;
+
+/* ========== 亮色主题代码语法高亮（GitHub风格） ========== */
+html:not(.dark) {
+    --prism-foreground: #24292f !important;
+    --prism-background: #f6f8fa !important;
+    --prism-comment: #6e7781 !important;
+    --prism-namespace: #24292f !important;
+    --prism-string: #0a3069 !important;
+    --prism-punctuation: #24292f !important;
+    --prism-literal: #0550ae !important;
+    --prism-keyword: #cf222e !important;
+    --prism-function: #8250df !important;
+    --prism-deleted: #82071e !important;
+    --prism-class: #953800 !important;
+    --prism-builtin: #0550ae !important;
+    --prism-property: #0550ae !important;
+    --prism-regex: #0a3069 !important;
+    --prism-selector: #116329 !important;
+    --prism-inserted: #116329 !important;
+    --prism-operator: #24292f !important;
+    --prism-variable: #953800 !important;
+    --prism-constant: #0550ae !important;
+}
+
+/* 深色主题代码语法高亮 */
+html.dark {
+    --prism-foreground: #c9d1d9 !important;
+    --prism-background: #0d1117 !important;
+    --prism-comment: #8b949e !important;
+    --prism-namespace: #c9d1d9 !important;
+    --prism-string: #a5d6ff !important;
+    --prism-punctuation: #c9d1d9 !important;
+    --prism-literal: #79c0ff !important;
+    --prism-keyword: #ff7b72 !important;
+    --prism-function: #d2a8ff !important;
+    --prism-deleted: #ffdcd7 !important;
+    --prism-class: #ffa657 !important;
+    --prism-builtin: #79c0ff !important;
+    --prism-property: #79c0ff !important;
+    --prism-regex: #a5d6ff !important;
+    --prism-selector: #7ee787 !important;
+    --prism-inserted: #7ee787 !important;
+    --prism-operator: #c9d1d9 !important;
+    --prism-variable: #ffa657 !important;
+    --prism-constant: #79c0ff !important;
 }
 
 /* 应用变量 */
@@ -150,4 +187,341 @@ kbd, samp {
 }
 .code-block.active {
     display: block;
+}
+
+/* ========== 代码块样式修复（亮色主题） ========== */
+html:not(.dark) .code-container,
+html:not(.dark) pre,
+html:not(.dark) .highlight {
+    background-color: #f6f8fa !important;
+    border: 1px solid #d0d7de !important;
+    border-radius: 6px !important;
+}
+
+html:not(.dark) pre code,
+html:not(.dark) .highlight pre {
+    background-color: transparent !important;
+    color: #24292f !important;
+}
+
+html:not(.dark) .markdown-body pre,
+html:not(.dark) .markdown-body .highlight {
+    background-color: #f6f8fa !important;
+    border: 1px solid #d0d7de !important;
+}
+
+html:not(.dark) .markdown-body pre code {
+    background-color: transparent !important;
+    color: #24292f !important;
+}
+
+html:not(.dark) code:not(pre code) {
+    background-color: rgba(175, 184, 193, 0.2) !important;
+    color: #24292f !important;
+    padding: 0.2em 0.4em !important;
+    border-radius: 3px !important;
+    font-size: 85% !important;
+}
+
+/* 选项卡容器在亮色主题下的样式 */
+html:not(.dark) .code-tabs {
+    background-color: #ffffff !important;
+    border-color: #d0d7de !important;
+}
+
+html:not(.dark) .code-tabs-nav {
+    background-color: #f6f8fa !important;
+    border-bottom-color: #d0d7de !important;
+}
+
+html:not(.dark) .code-tab {
+    color: #24292f !important;
+}
+
+html:not(.dark) .code-tab.active {
+    color: #0969da !important;
+    border-bottom-color: #0969da !important;
+}
+
+html:not(.dark) .code-block {
+    background-color: #f6f8fa !important;
+    color: #24292f !important;
+}
+
+/* ========== 代码块样式修复（暗色主题） ========== */
+html.dark .code-container,
+html.dark pre,
+html.dark .highlight {
+    background-color: #161b22 !important;
+    border: 1px solid #30363d !important;
+    border-radius: 6px !important;
+}
+
+html.dark pre code,
+html.dark .highlight pre {
+    background-color: transparent !important;
+    color: #c9d1d9 !important;
+}
+
+html.dark .markdown-body pre,
+html.dark .markdown-body .highlight {
+    background-color: #161b22 !important;
+    border: 1px solid #30363d !important;
+}
+
+html.dark .markdown-body pre code {
+    background-color: transparent !important;
+    color: #c9d1d9 !important;
+}
+
+html.dark code:not(pre code) {
+    background-color: rgba(110, 118, 129, 0.4) !important;
+    color: #c9d1d9 !important;
+    padding: 0.2em 0.4em !important;
+    border-radius: 3px !important;
+    font-size: 85% !important;
+}
+
+/* 选项卡容器在暗色主题下的样式 */
+html.dark .code-tabs {
+    background-color: #0d1117 !important;
+    border-color: #30363d !important;
+}
+
+html.dark .code-tabs-nav {
+    background-color: #161b22 !important;
+    border-bottom-color: #30363d !important;
+}
+
+html.dark .code-tab {
+    color: #c9d1d9 !important;
+}
+
+html.dark .code-tab.active {
+    color: #58a6ff !important;
+    border-bottom-color: #58a6ff !important;
+}
+
+html.dark .code-block {
+    background-color: #0d1117 !important;
+    color: #c9d1d9 !important;
+}
+
+/* ========== 语法高亮具体样式（亮色主题 - GitHub风格） ========== */
+html:not(.dark) .token.comment,
+html:not(.dark) .token.prolog,
+html:not(.dark) .token.doctype,
+html:not(.dark) .token.cdata {
+    color: #6e7781 !important;
+}
+
+html:not(.dark) .token.punctuation {
+    color: #24292f !important;
+}
+
+html:not(.dark) .token.property,
+html:not(.dark) .token.tag,
+html:not(.dark) .token.boolean,
+html:not(.dark) .token.number,
+html:not(.dark) .token.constant,
+html:not(.dark) .token.symbol,
+html:not(.dark) .token.deleted {
+    color: #0550ae !important;
+}
+
+html:not(.dark) .token.selector,
+html:not(.dark) .token.attr-name,
+html:not(.dark) .token.string,
+html:not(.dark) .token.char,
+html:not(.dark) .token.builtin,
+html:not(.dark) .token.inserted {
+    color: #0a3069 !important;
+}
+
+html:not(.dark) .token.operator,
+html:not(.dark) .token.entity,
+html:not(.dark) .token.url,
+html:not(.dark) .language-css .token.string,
+html:not(.dark) .style .token.string {
+    color: #24292f !important;
+}
+
+html:not(.dark) .token.atrule,
+html:not(.dark) .token.attr-value,
+html:not(.dark) .token.keyword {
+    color: #cf222e !important;
+}
+
+html:not(.dark) .token.function,
+html:not(.dark) .token.class-name {
+    color: #8250df !important;
+}
+
+html:not(.dark) .token.regex,
+html:not(.dark) .token.important,
+html:not(.dark) .token.variable {
+    color: #953800 !important;
+}
+
+/* ========== 语法高亮具体样式（暗色主题） ========== */
+html.dark .token.comment,
+html.dark .token.prolog,
+html.dark .token.doctype,
+html.dark .token.cdata {
+    color: #8b949e !important;
+}
+
+html.dark .token.punctuation {
+    color: #c9d1d9 !important;
+}
+
+html.dark .token.property,
+html.dark .token.tag,
+html.dark .token.boolean,
+html.dark .token.number,
+html.dark .token.constant,
+html.dark .token.symbol,
+html.dark .token.deleted {
+    color: #79c0ff !important;
+}
+
+html.dark .token.selector,
+html.dark .token.attr-name,
+html.dark .token.string,
+html.dark .token.char,
+html.dark .token.builtin,
+html.dark .token.inserted {
+    color: #a5d6ff !important;
+}
+
+html.dark .token.operator,
+html.dark .token.entity,
+html.dark .token.url,
+html.dark .language-css .token.string,
+html.dark .style .token.string {
+    color: #c9d1d9 !important;
+}
+
+html.dark .token.atrule,
+html.dark .token.attr-value,
+html.dark .token.keyword {
+    color: #ff7b72 !important;
+}
+
+html.dark .token.function,
+html.dark .token.class-name {
+    color: #d2a8ff !important;
+}
+
+html.dark .token.regex,
+html.dark .token.important,
+html.dark .token.variable {
+    color: #ffa657 !important;
+}
+
+/* ========== COPY按钮样式修复 ========== */
+/* 亮色主题下COPY按钮悬停样式 */
+html:not(.dark) .copy-btn {
+    color: #ffffff !important;
+    background-color: rgba(0, 0, 0, 0.6) !important;
+}
+
+html:not(.dark) .copy-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    color: #ffffff !important;
+}
+
+/* 暗色主题下COPY按钮悬停样式 */
+html.dark .copy-btn {
+    color: #8b949e !important;
+    background-color: transparent !important;
+}
+
+html.dark .copy-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: #c9d1d9 !important;
+}
+
+/* ========== 打赏按钮样式修复 ========== */
+/* 亮色主题下打赏按钮背景 */
+html:not(.dark) #reward-button {
+    background-color: #ffffff !important;
+    border: 1px solid #d0d7de !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+}
+
+html:not(.dark) #reward-button:hover {
+    background-color: #f6f8fa !important;
+    border-color: #0969da !important;
+}
+
+/* 暗色主题下打赏按钮背景 */
+html.dark #reward-button {
+    background-color: #161b22 !important;
+    border: 1px solid #30363d !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+html.dark #reward-button:hover {
+    background-color: #0d1117 !important;
+    border-color: #58a6ff !important;
+}
+
+/* ========== 点赞/收藏按钮样式修复 ========== */
+/* 亮色主题下点赞/收藏按钮背景 */
+html:not(.dark) .like-fav-buttons button {
+    background-color: #ffffff !important;
+    border: 1px solid #d0d7de !important;
+    color: #24292f !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+html:not(.dark) .like-fav-buttons button:hover {
+    background-color: #f6f8fa !important;
+    border-color: #0969da !important;
+    color: #0969da !important;
+}
+
+html:not(.dark) .like-btn.liked {
+    background-color: #0078e7 !important;
+    border-color: #0078e7 !important;
+    color: #ffffff !important;
+}
+
+html:not(.dark) .fav-btn.favorited {
+    background-color: #ffffff !important;
+    border-color: #ff9800 !important;
+}
+
+html:not(.dark) .fav-btn.favorited .iconify {
+    color: #ff9800 !important;
+}
+
+/* 暗色主题下点赞/收藏按钮背景 */
+html.dark .like-fav-buttons button {
+    background-color: #161b22 !important;
+    border: 1px solid #30363d !important;
+    color: #c9d1d9 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+html.dark .like-fav-buttons button:hover {
+    background-color: #0d1117 !important;
+    border-color: #58a6ff !important;
+    color: #58a6ff !important;
+}
+
+html.dark .like-btn.liked {
+    background-color: #0078e7 !important;
+    border-color: #0078e7 !important;
+    color: #ffffff !important;
+}
+
+html.dark .fav-btn.favorited {
+    background-color: #161b22 !important;
+    border-color: #ff9800 !important;
+}
+
+html.dark .fav-btn.favorited .iconify {
+    color: #ff9800 !important;
 }
