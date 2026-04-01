@@ -3,6 +3,15 @@ body {
     font-size: 20px;
 }
 
+/* 页面背景 - 亮色模式为白色 */
+html:not(.dark) body {
+    background-color: #ffffff !important;
+}
+
+html.dark body {
+    background-color: #0d1117 !important;
+}
+
 /* 背景图 */
 #bg {
     opacity: 0.35;
@@ -448,11 +457,13 @@ html:not(.dark) #reward-button {
     background-color: #ffffff !important;
     border: 1px solid #d0d7de !important;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+    color: #24292f !important; /* 确保文字颜色为黑色 */
 }
 
 html:not(.dark) #reward-button:hover {
     background-color: #f6f8fa !important;
     border-color: #0969da !important;
+    color: #24292f !important; /* 悬停时保持黑色文字 */
 }
 
 /* 暗色主题下打赏按钮背景 */
@@ -460,11 +471,13 @@ html.dark #reward-button {
     background-color: #161b22 !important;
     border: 1px solid #30363d !important;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+    color: #c9d1d9 !important; /* 暗色主题下使用浅色文字 */
 }
 
 html.dark #reward-button:hover {
     background-color: #0d1117 !important;
     border-color: #58a6ff !important;
+    color: #c9d1d9 !important; /* 悬停时保持浅色文字 */
 }
 
 /* ========== 点赞/收藏按钮样式修复 ========== */
@@ -524,4 +537,31 @@ html.dark .fav-btn.favorited {
 
 html.dark .fav-btn.favorited .iconify {
     color: #ff9800 !important;
+}
+
+/* ========== 投币按钮样式修复（仅按钮） ========== */
+/* 亮色主题下投币按钮样式 */
+html:not(.dark) .coin-btn {
+    background-color: #f6f8fa !important;
+    border: 1px solid #d0d7de !important;
+    color: #24292f !important; /* 确保文字颜色为黑色 */
+}
+
+html:not(.dark) .coin-btn:hover {
+    background-color: #e1e4e8 !important;
+    border-color: #0969da !important;
+    color: #24292f !important; /* 悬停时保持黑色文字 */
+}
+
+/* 暗色主题下投币按钮样式 */
+html.dark .coin-btn {
+    background-color: #0d1117 !important;
+    border: 1px solid #30363d !important;
+    color: #c9d1d9 !important; /* 暗色主题下使用浅色文字 */
+}
+
+html.dark .coin-btn:hover {
+    background-color: #161b22 !important;
+    border-color: #58a6ff !important;
+    color: #c9d1d9 !important; /* 悬停时保持浅色文字 */
 }
