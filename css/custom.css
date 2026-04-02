@@ -96,17 +96,17 @@ kbd, samp {
 
 /* 深色主题 - 使用 html.dark 类匹配主题实现 */
 html.dark {
-    --tab-container-bg: #0d1117 !important;
-    --tab-nav-bg: #161b22 !important;
-    --tab-border: #30363d !important;
-    --tab-inactive-color: #c9d1d9 !important;
-    --tab-active-color: #58a6ff !important;
-    --code-bg: #0d1117 !important;
-    --code-text: #c9d1d9 !important;
-    --code-block-bg: #161b22 !important;
+    --tab-container-bg: #282c34 !important;
+    --tab-nav-bg: #21252b !important;
+    --tab-border: #181a1f !important;
+    --tab-inactive-color: #abb2bf !important;
+    --tab-active-color: #61afef !important;
+    --code-bg: #282c34 !important;
+    --code-text: #abb2bf !important;
+    --code-block-bg: #282c34 !important;
 }
 
-/* ========== 亮色主题代码语法高亮（GitHub风格） ========== */
+/* ========== 亮色主题代码语法高亮（GitHub 风格） ========== */
 html:not(.dark) {
     --prism-foreground: #24292f !important;
     --prism-background: #f6f8fa !important;
@@ -129,27 +129,27 @@ html:not(.dark) {
     --prism-constant: #0550ae !important;
 }
 
-/* 深色主题代码语法高亮 */
+/* 暗色主题代码语法高亮（One Dark 主题） */
 html.dark {
-    --prism-foreground: #c9d1d9 !important;
-    --prism-background: #0d1117 !important;
-    --prism-comment: #8b949e !important;
-    --prism-namespace: #c9d1d9 !important;
-    --prism-string: #a5d6ff !important;
-    --prism-punctuation: #c9d1d9 !important;
-    --prism-literal: #79c0ff !important;
-    --prism-keyword: #ff7b72 !important;
-    --prism-function: #d2a8ff !important;
-    --prism-deleted: #ffdcd7 !important;
-    --prism-class: #ffa657 !important;
-    --prism-builtin: #79c0ff !important;
-    --prism-property: #79c0ff !important;
-    --prism-regex: #a5d6ff !important;
-    --prism-selector: #7ee787 !important;
-    --prism-inserted: #7ee787 !important;
-    --prism-operator: #c9d1d9 !important;
-    --prism-variable: #ffa657 !important;
-    --prism-constant: #79c0ff !important;
+    --prism-foreground: #abb2bf !important;
+    --prism-background: #282c34 !important;
+    --prism-comment: #5c6370 !important;
+    --prism-namespace: #e06c75 !important;
+    --prism-string: #98c379 !important;
+    --prism-punctuation: #abb2bf !important;
+    --prism-literal: #d19a66 !important;
+    --prism-keyword: #c678dd !important;
+    --prism-function: #61afef !important;
+    --prism-deleted: #e06c75 !important;
+    --prism-class: #e5c07b !important;
+    --prism-builtin: #e5c07b !important;
+    --prism-property: #56b6c2 !important;
+    --prism-regex: #56b6c2 !important;
+    --prism-selector: #98c379 !important;
+    --prism-inserted: #98c379 !important;
+    --prism-operator: #56b6c2 !important;
+    --prism-variable: #e06c75 !important;
+    --prism-constant: #d19a66 !important;
 }
 
 /* 应用变量 */
@@ -257,63 +257,63 @@ html:not(.dark) .code-block {
     color: #24292f !important;
 }
 
-/* ========== 代码块样式修复（暗色主题） ========== */
+/* ========== 代码块样式修复（暗色主题 - One Dark） ========== */
 html.dark .code-container,
 html.dark pre,
 html.dark .highlight {
-    background-color: #161b22 !important;
-    border: 1px solid #30363d !important;
+    background-color: #282c34 !important;
+    border: 1px solid #181a1f !important;
     border-radius: 6px !important;
 }
 
 html.dark pre code,
 html.dark .highlight pre {
     background-color: transparent !important;
-    color: #c9d1d9 !important;
+    color: #abb2bf !important;
 }
 
 html.dark .markdown-body pre,
 html.dark .markdown-body .highlight {
-    background-color: #161b22 !important;
-    border: 1px solid #30363d !important;
+    background-color: #282c34 !important;
+    border: 1px solid #181a1f !important;
 }
 
 html.dark .markdown-body pre code {
     background-color: transparent !important;
-    color: #c9d1d9 !important;
+    color: #abb2bf !important;
 }
 
 html.dark code:not(pre code) {
-    background-color: rgba(110, 118, 129, 0.4) !important;
-    color: #c9d1d9 !important;
+    background-color: rgba(92, 99, 112, 0.5) !important;
+    color: #abb2bf !important;
     padding: 0.2em 0.4em !important;
     border-radius: 3px !important;
     font-size: 85% !important;
 }
 
-/* 选项卡容器在暗色主题下的样式 */
+/* 选项卡容器在暗色主题下的样式（One Dark） */
 html.dark .code-tabs {
-    background-color: #0d1117 !important;
-    border-color: #30363d !important;
+    background-color: #282c34 !important;
+    border-color: #181a1f !important;
 }
 
 html.dark .code-tabs-nav {
-    background-color: #161b22 !important;
-    border-bottom-color: #30363d !important;
+    background-color: #21252b !important;
+    border-bottom-color: #181a1f !important;
 }
 
 html.dark .code-tab {
-    color: #c9d1d9 !important;
+    color: #abb2bf !important;
 }
 
 html.dark .code-tab.active {
-    color: #58a6ff !important;
-    border-bottom-color: #58a6ff !important;
+    color: #61afef !important;
+    border-bottom-color: #61afef !important;
 }
 
 html.dark .code-block {
-    background-color: #0d1117 !important;
-    color: #c9d1d9 !important;
+    background-color: #282c34 !important;
+    color: #abb2bf !important;
 }
 
 /* ========== 语法高亮具体样式（亮色主题 - GitHub风格） ========== */
@@ -372,16 +372,16 @@ html:not(.dark) .token.variable {
     color: #953800 !important;
 }
 
-/* ========== 语法高亮具体样式（暗色主题） ========== */
+/* ========== 语法高亮具体样式（暗色主题 - One Dark） ========== */
 html.dark .token.comment,
 html.dark .token.prolog,
 html.dark .token.doctype,
 html.dark .token.cdata {
-    color: #8b949e !important;
+    color: #5c6370 !important;
 }
 
 html.dark .token.punctuation {
-    color: #c9d1d9 !important;
+    color: #abb2bf !important;
 }
 
 html.dark .token.property,
@@ -391,7 +391,7 @@ html.dark .token.number,
 html.dark .token.constant,
 html.dark .token.symbol,
 html.dark .token.deleted {
-    color: #79c0ff !important;
+    color: #d19a66 !important;
 }
 
 html.dark .token.selector,
@@ -400,7 +400,7 @@ html.dark .token.string,
 html.dark .token.char,
 html.dark .token.builtin,
 html.dark .token.inserted {
-    color: #a5d6ff !important;
+    color: #98c379 !important;
 }
 
 html.dark .token.operator,
@@ -408,24 +408,32 @@ html.dark .token.entity,
 html.dark .token.url,
 html.dark .language-css .token.string,
 html.dark .style .token.string {
-    color: #c9d1d9 !important;
+    color: #56b6c2 !important;
 }
 
 html.dark .token.atrule,
 html.dark .token.attr-value,
 html.dark .token.keyword {
-    color: #ff7b72 !important;
+    color: #c678dd !important;
 }
 
 html.dark .token.function,
 html.dark .token.class-name {
-    color: #d2a8ff !important;
+    color: #61afef !important;
 }
 
 html.dark .token.regex,
 html.dark .token.important,
 html.dark .token.variable {
-    color: #ffa657 !important;
+    color: #e06c75 !important;
+}
+
+html.dark .token.namespace {
+    color: #e06c75 !important;
+}
+
+html.dark .token.class {
+    color: #e5c07b !important;
 }
 
 /* ========== COPY按钮样式修复 ========== */
