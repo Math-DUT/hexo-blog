@@ -49,17 +49,20 @@ delimiters: [
 ]
 });
 }
-});</script><meta name="description" content="解析： 完全二叉树的一个重要性子：对于有 NNN 个节点的完全二叉树，如果我们用数组存储（根节点下标为 1），则对于任意节点 iii：  左孩子下标为 2×i2 \times i2×i 右孩子下标为 2×i+12 \times i + 12×i+1  解题思路：  完全二叉树的后序遍历序列中，最后一个元素是根节点 我们可以递归地重建树：对于区间 [l,r][l, r][l,r]，其中点左侧是左子">
+});</script><meta name="description" content="2021团体程序设计天梯赛  L1-1 人与神（5分） 跨界大神 L. Peter Deutsch 有一句名言：“To iterate is human, to recurse divine.”（迭代的是人，递归的是神）。本题就请你直接在屏幕上输出这句话。  输入格式： 本题没有输入。  输出格式： 在一行中输出 To iterate is human, to recurse divine.。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="草莓先森的blog">
-<meta property="og:url" content="http://example.com/2026/04/01/%E5%9B%A2%E4%BD%93%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%A4%A9%E6%A2%AF%E8%B5%9B/2020%20%E5%A4%A9%E6%A2%AF%E8%B5%9B/2020%20%E5%A4%A9%E6%A2%AF%E8%B5%9B/index.html">
+<meta property="og:url" content="http://example.com/2026/04/13/%E5%9B%A2%E4%BD%93%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%A4%A9%E6%A2%AF%E8%B5%9B/2021%E5%A4%A9%E6%A2%AF%E8%B5%9B/2021%E5%A4%A9%E6%A2%AF%E8%B5%9B/index.html">
 <meta property="og:site_name" content="草莓先森的blog">
-<meta property="og:description" content="解析： 完全二叉树的一个重要性子：对于有 NNN 个节点的完全二叉树，如果我们用数组存储（根节点下标为 1），则对于任意节点 iii：  左孩子下标为 2×i2 \times i2×i 右孩子下标为 2×i+12 \times i + 12×i+1  解题思路：  完全二叉树的后序遍历序列中，最后一个元素是根节点 我们可以递归地重建树：对于区间 [l,r][l, r][l,r]，其中点左侧是左子">
+<meta property="og:description" content="2021团体程序设计天梯赛  L1-1 人与神（5分） 跨界大神 L. Peter Deutsch 有一句名言：“To iterate is human, to recurse divine.”（迭代的是人，递归的是神）。本题就请你直接在屏幕上输出这句话。  输入格式： 本题没有输入。  输出格式： 在一行中输出 To iterate is human, to recurse divine.。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2026-04-01T10:32:57.530Z">
-<meta property="article:modified_time" content="2026-04-02T08:37:18.477Z">
+<meta property="og:image" content="https://images.ptausercontent.com/b388314c-c7d3-48d8-befa-0fc45cf853a9.JPG">
+<meta property="og:image" content="c:%5CUsers%5CHUAWEI%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20260413140240767.png">
+<meta property="article:published_time" content="2026-04-13T05:54:43.722Z">
+<meta property="article:modified_time" content="2026-04-13T06:02:43.373Z">
 <meta property="article:author" content="Celeste">
-<meta name="twitter:card" content="summary"><style>.highlight,
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://images.ptausercontent.com/b388314c-c7d3-48d8-befa-0fc45cf853a9.JPG"><style>.highlight,
 .highlight pre,
 .highlight table,
 .highlight td,
@@ -436,25 +439,14 @@ IconifyProviders = {
     // Wait for 1 second before switching API hosts
     rotate: 1000,
   },
-};</script><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/CelesteStrawberry/js/sidebar.js" type="module"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="Table of Contents"><span class="icon iconify" data-icon="ri:list-ordered"></span></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="Overview"><span class="icon iconify" data-icon="ri:passport-line"></span></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/CelesteStrawberry/about/" title="Celeste"><img width="96" loading="lazy" src="/CelesteStrawberry/images/avatar.jpg" alt="Celeste"></a><div class="site-author-name"><a href="/CelesteStrawberry/about/">Celeste</a></div><span class="site-name">草莓先森的blog</span><sub class="site-subtitle">🍓</sub><div class="site-description"></div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/CelesteStrawberry/" title="Home"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:home-4-line"></span></span></a><div class="site-state-item"><a href="/CelesteStrawberry/archives/" title="Archives"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:archive-line"></span></span><span class="site-state-item-count">7</span></a></div><div class="site-state-item"><a href="/CelesteStrawberry/categories/" title="Categories"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:folder-2-line"></span></span><span class="site-state-item-count">3</span></a></div><div class="site-state-item"><a href="/CelesteStrawberry/tags/" title="Tags"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="site-state-item-count">1</span></a></div><a class="site-state-item hty-icon-button" href="https://yun.yunyoujun.cn" title="文档"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:settings-line"></span></span></a></nav><hr style="margin-bottom:0.5rem"><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/CelesteStrawberry/links/" title="我的小伙伴们" style="color:dodgerblue"><span class="icon iconify" data-icon="ri:genderless-line"></span></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><span class="icon iconify" data-icon="ri:contrast-2-line"></span></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90"><span class="toc-number">1.</span> <span class="toc-text"> 解析：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-number">2.</span> <span class="toc-text"> 代码：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86%E7%BB%93%E6%9E%9C"><span class="toc-number">3.</span> <span class="toc-text"> 输出层序遍历结果</span></a></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article" style="--smc-primary:#0078E7;"><link itemprop="mainEntityOfPage" href="http://example.com/CelesteStrawberry/2026/04/01/%E5%9B%A2%E4%BD%93%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%A4%A9%E6%A2%AF%E8%B5%9B/2020%20%E5%A4%A9%E6%A2%AF%E8%B5%9B/2020%20%E5%A4%A9%E6%A2%AF%E8%B5%9B/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="Celeste"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="草莓先森的blog"></span><header class="post-header"><h1 class="post-title" itemprop="name headline"></h1><div class="post-meta"><div class="post-time"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-line"></span></span> <time title="Created: 2026-04-01 18:32:57" itemprop="dateCreated datePublished" datetime="2026-04-01T18:32:57+08:00">2026-04-01</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-2-line"></span></span> <time title="Modified: 2026-04-02 16:37:18" itemprop="dateModified" datetime="2026-04-02T16:37:18+08:00">2026-04-02</time></div><span class="post-busuanzi"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="Views"><span class="icon iconify" data-icon="ri:eye-line"></span> <span id="busuanzi_value_page_pv"></span></span></span><div class="post-classify"></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body"><h4 id="解析"><a class="markdownIt-Anchor" href="#解析"></a> 解析：</h4>
-<p>完全二叉树的一个重要性子：对于有 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> 个节点的完全二叉树，如果我们用数组存储（根节点下标为 1），则对于任意节点 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span>：</p>
-<ul>
-<li>左孩子下标为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo>×</mo><mi>i</mi></mrow><annotation encoding="application/x-tex">2 \times i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span></li>
-<li>右孩子下标为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo>×</mo><mi>i</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2 \times i + 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.74285em;vertical-align:-0.08333em;"></span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></li>
-</ul>
-<p><strong>解题思路：</strong></p>
-<ol>
-<li>完全二叉树的后序遍历序列中，最后一个元素是根节点</li>
-<li>我们可以递归地重建树：对于区间 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mi>l</mi><mo separator="true">,</mo><mi>r</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[l, r]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mclose">]</span></span></span></span>，其中点左侧是左子树，右侧是右子树，最后是根节点</li>
-<li>使用 DFS 从后序遍历序列重建树，并将结果存入数组（层序存储）</li>
-<li>最后按数组顺序输出即可</li>
-</ol>
-<p>具体实现时，我们用一个 <code>tree</code> 数组存储层序遍历结果，通过后序遍历的顺序递归填充。</p>
-<video width="100%" height="auto" controls>
-  <source src="/CelesteStrawberry/videos/LensImaging.mp4" type="video/mp4">
-  您的浏览器不支持 HTML5 视频。
-</video>
-<h4 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码：</h4>
+};</script><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/CelesteStrawberry/js/sidebar.js" type="module"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="Table of Contents"><span class="icon iconify" data-icon="ri:list-ordered"></span></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="Overview"><span class="icon iconify" data-icon="ri:passport-line"></span></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/CelesteStrawberry/about/" title="Celeste"><img width="96" loading="lazy" src="/CelesteStrawberry/images/avatar.jpg" alt="Celeste"></a><div class="site-author-name"><a href="/CelesteStrawberry/about/">Celeste</a></div><span class="site-name">草莓先森的blog</span><sub class="site-subtitle">🍓</sub><div class="site-description"></div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/CelesteStrawberry/" title="Home"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:home-4-line"></span></span></a><div class="site-state-item"><a href="/CelesteStrawberry/archives/" title="Archives"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:archive-line"></span></span><span class="site-state-item-count">6</span></a></div><div class="site-state-item"><a href="/CelesteStrawberry/categories/" title="Categories"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:folder-2-line"></span></span><span class="site-state-item-count">4</span></a></div><div class="site-state-item"><a href="/CelesteStrawberry/tags/" title="Tags"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="site-state-item-count">0</span></a></div><a class="site-state-item hty-icon-button" href="https://yun.yunyoujun.cn" title="文档"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:settings-line"></span></span></a></nav><hr style="margin-bottom:0.5rem"><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/CelesteStrawberry/links/" title="我的小伙伴们" style="color:dodgerblue"><span class="icon iconify" data-icon="ri:genderless-line"></span></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><span class="icon iconify" data-icon="ri:contrast-2-line"></span></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#2021%E5%9B%A2%E4%BD%93%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%A4%A9%E6%A2%AF%E8%B5%9B"><span class="toc-number">1.</span> <span class="toc-text"> 2021团体程序设计天梯赛</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#l1-1-%E4%BA%BA%E4%B8%8E%E7%A5%9E5%E5%88%86"><span class="toc-number">1.1.</span> <span class="toc-text"> L1-1 人与神（5分）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 题解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#l1-2-%E4%B8%A4%E5%B0%8F%E6%97%B6%E5%AD%A6%E5%AE%8Cc%E8%AF%AD%E8%A8%805%E5%88%86"><span class="toc-number">1.2.</span> <span class="toc-text"> L1-2 两小时学完C语言（5分）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F-2"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F-2"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 输出格式：</span></a></li></ol></li></ol></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article" style="--smc-primary:#0078E7;"><link itemprop="mainEntityOfPage" href="http://example.com/CelesteStrawberry/2026/04/13/%E5%9B%A2%E4%BD%93%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%A4%A9%E6%A2%AF%E8%B5%9B/2021%E5%A4%A9%E6%A2%AF%E8%B5%9B/2021%E5%A4%A9%E6%A2%AF%E8%B5%9B/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="Celeste"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="草莓先森的blog"></span><header class="post-header"><h1 class="post-title" itemprop="name headline"></h1><div class="post-meta"><div class="post-time"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-line"></span></span> <time title="Created: 2026-04-13 13:54:43" itemprop="dateCreated datePublished" datetime="2026-04-13T13:54:43+08:00">2026-04-13</time></div><span class="post-busuanzi"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="Views"><span class="icon iconify" data-icon="ri:eye-line"></span> <span id="busuanzi_value_page_pv"></span></span></span><div class="post-classify"></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body"><h1 id="2021团体程序设计天梯赛"><a class="markdownIt-Anchor" href="#2021团体程序设计天梯赛"></a> 2021团体程序设计天梯赛</h1>
+<h2 id="l1-1-人与神5分"><a class="markdownIt-Anchor" href="#l1-1-人与神5分"></a> L1-1 人与神（5分）</h2>
+<p>跨界大神 L. Peter Deutsch 有一句名言：“To iterate is human, to recurse divine.”（迭代的是人，递归的是神）。本题就请你直接在屏幕上输出这句话。</p>
+<h3 id="输入格式"><a class="markdownIt-Anchor" href="#输入格式"></a> 输入格式：</h3>
+<p>本题没有输入。</p>
+<h3 id="输出格式"><a class="markdownIt-Anchor" href="#输出格式"></a> 输出格式：</h3>
+<p>在一行中输出 <code>To iterate is human, to recurse divine.</code>。</p>
+<h3 id="题解"><a class="markdownIt-Anchor" href="#题解"></a> 题解</h3>
 <div class="code-tabs">
   <div class="code-tabs-nav">
     <button class="code-tab" data-lang="cpp" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">C++</button>
@@ -462,75 +454,29 @@ IconifyProviders = {
   </div>
   <div class="code-tabs-content">
     <div class="code-block" data-lang="cpp">
-      <pre><code class="language-cpp">#include &lt;iostream&gt;
-#include &lt;vector&gt;
+      <pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
 using namespace std;
-<p>int n;<br />
-vector&lt;int&gt; postorder;<br />
-vector&lt;int&gt; tree;</p>
-<p>// idx: 当前子树根节点在 tree 中的位置<br />
-// l, r: 当前子树在后序遍历中的区间 [l, r]<br />
-void dfs(int idx, int l, int r) {<br />
-if (l &gt; r) return;</p>
-<pre><code>// 后序遍历的最后一个元素是当前子树的根
-tree[idx] = postorder[r];
-
-// 计算左右子树的大小
-int leftSize = (r - l + 1) / 2;
-int rightSize = (r - l + 1) - leftSize - 1;
-
-// 递归构建左右子树
-dfs(idx * 2, l, l + leftSize - 1);           // 左子树
-dfs(idx * 2 + 1, l + leftSize, r - 1);       // 右子树
-</code></pre>
-<p>}</p>
-<p>int main() {<br />
-cin &gt;&gt; n;<br />
-postorder.resize(n);<br />
-tree.resize(n + 1);</p>
-<pre><code>for (int i = 0; i &lt; n; i++) {
-    cin &gt;&gt; postorder[i];
-}
-
-dfs(1, 0, n - 1);
-
-// 输出层序遍历结果
-for (int i = 1; i &lt;= n; i++) {
-    cout &lt;&lt; tree[i] &lt;&lt; (i == n ? &quot;&quot; : &quot; &quot;);
-}
-cout &lt;&lt; endl;
-
-return 0;
-</code></pre>
-<p>}</code></pre><br />
-</div><br />
-<div class="code-block" data-lang="python"><br />
-<pre><code class="language-python">import sys</p>
-<p>n = int(sys.stdin.readline())<br />
-postorder = list(map(int, sys.stdin.readline().split()))<br />
-tree = [0] * (n + 1)</p>
-<p>def dfs(idx, l, r):<br />
-if l &gt; r:<br />
-return<br />
-# 后序遍历的最后一个元素是当前子树的根<br />
-tree[idx] = postorder[r]</p>
-<pre><code># 计算左右子树的大小
-left_size = (r - l + 1) // 2
-right_size = (r - l + 1) - left_size - 1
-
-# 递归构建左右子树
-dfs(idx * 2, l, l + left_size - 1)           # 左子树
-dfs(idx * 2 + 1, l + left_size, r - 1)       # 右子树
-</code></pre>
-<p>dfs(1, 0, n - 1)</p>
-<h1 id="输出层序遍历结果"><a class="markdownIt-Anchor" href="#输出层序遍历结果"></a> 输出层序遍历结果</h1>
-<p>for i in range(1, n + 1):<br />
-print(tree[i], end=‘’ if i == n else ’ ')<br />
-print()</code></pre><br />
-</div></p>
+int main() {
+    cout << "To iterate is human, to recurse divine." << endl;
+    return 0;
+}</code></pre>
+    </div>
+    <div class="code-block" data-lang="python">
+      <pre><code class="language-python">print("To iterate is human, to recurse divine.")</code></pre>
+    </div>
   </div>
 </div>
-</div></section></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/CelesteStrawberry/2026/04/02/%E5%9B%A2%E4%BD%93%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%A4%A9%E6%A2%AF%E8%B5%9B/2020%20%E5%A4%A9%E6%A2%AF%E8%B5%9B/Untitled/" rel="prev" title=""><span class="icon iconify" data-icon="ri:arrow-left-s-line"></span><span class="post-nav-text"></span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/CelesteStrawberry/2026/04/01/%E5%9B%A2%E4%BD%93%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%A4%A9%E6%A2%AF%E8%B5%9B/2020%E5%A4%A9%E6%A2%AF%E8%B5%9B/2020%E5%A4%A9%E6%A2%AF%E8%B5%9B/" rel="next" title=""><span class="post-nav-text"></span><span class="icon iconify" data-icon="ri:arrow-right-s-line"></span></a></div></div><div class="like-fav-buttons"><div class="like-btn-wrapper"><button class="like-btn" title="点赞"><span style="font-size:1.2rem">👍</span><!--span.like-count 0--></button></div><div class="fav-btn-wrapper"><button class="fav-btn" title="收藏"><span class="iconify" data-icon="ri:star-line"></span></button></div></div><style>.like-fav-buttons {
+<h2 id="l1-2-两小时学完c语言5分"><a class="markdownIt-Anchor" href="#l1-2-两小时学完c语言5分"></a> L1-2 <strong>两小时学完C语言</strong>（5分）</h2>
+<p><img src="https://images.ptausercontent.com/b388314c-c7d3-48d8-befa-0fc45cf853a9.JPG" alt="Q.JPG" / loading="lazy"></p>
+<p>知乎上有个宝宝问：“两个小时内如何学完 C 语言？”当然，问的是“学完”并不是“学会”。</p>
+<p>假设一本 C 语言教科书有 N 个字，这个宝宝每分钟能看 K 个字，看了 M 分钟。还剩多少字没有看？</p>
+<h3 id="输入格式-2"><a class="markdownIt-Anchor" href="#输入格式-2"></a> 输入格式：</h3>
+<p>输入在一行中给出 3 个正整数，分别是 N（不超过 400 000），教科书的总字数；K（不超过 3 000），是宝宝每分钟能看的字数；M（不超过 120），是宝宝看书的分钟数。</p>
+<p>题目保证宝宝看完的字数不超过 N。</p>
+<h3 id="输出格式-2"><a class="markdownIt-Anchor" href="#输出格式-2"></a> 输出格式：</h3>
+<p>在一行中输出宝宝还没有看的字数。</p>
+<p><img src="C:%5CUsers%5CHUAWEI%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20260413140240767.png" alt="image-20260413140240767" / loading="lazy"></p>
+</div></section></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/CelesteStrawberry/2026/04/20/%E5%9B%A2%E4%BD%93%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%A4%A9%E6%A2%AF%E8%B5%9B/2026%E5%A4%A9%E6%A2%AF%E8%B5%9B/2026%E5%A4%A9%E6%A2%AF%E8%B5%9B/" rel="prev" title=""><span class="icon iconify" data-icon="ri:arrow-left-s-line"></span><span class="post-nav-text"></span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/CelesteStrawberry/2026/03/30/%E5%9B%A2%E4%BD%93%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%A4%A9%E6%A2%AF%E8%B5%9B/2020%E5%A4%A9%E6%A2%AF%E8%B5%9B/2020%E5%A4%A9%E6%A2%AF%E8%B5%9B/" rel="next" title="2020团体程序设计天梯赛"><span class="post-nav-text">2020团体程序设计天梯赛</span><span class="icon iconify" data-icon="ri:arrow-right-s-line"></span></a></div></div><div class="like-fav-buttons"><div class="like-btn-wrapper"><button class="like-btn" title="点赞"><span style="font-size:1.2rem">👍</span><!--span.like-count 0--></button></div><div class="fav-btn-wrapper"><button class="fav-btn" title="收藏"><span class="iconify" data-icon="ri:star-line"></span></button></div></div><style>.like-fav-buttons {
   position: fixed;
   right: 20px;
   bottom: 120px;

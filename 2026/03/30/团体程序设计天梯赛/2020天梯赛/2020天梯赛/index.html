@@ -1,0 +1,1846 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="Celeste"><meta name="copyright" content="Celeste"><meta name="generator" content="Hexo 8.1.1"><meta name="theme" content="hexo-theme-yun"><title>2020团体程序设计天梯赛 | 草莓先森的blog</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/star-markdown-css@0.4.1/dist/yun/yun-markdown.min.css"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/prism-theme-vars/base.css"><script src="https://fastly.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>function initScrollReveal() {
+  [".post-card",".markdown-body img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+}
+document.addEventListener("DOMContentLoaded", initScrollReveal);
+document.addEventListener("pjax:success", initScrollReveal);
+</script><link rel="stylesheet" type="text/css" href="https://fastly.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script defer src="https://fastly.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script><link rel="stylesheet" type="text/css" href="https://fastly.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.css"><script defer src="https://fastly.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script><script defer src="https://fastly.jsdelivr.net/npm/katex@latest/dist/contrib/auto-render.min.js"></script><script type="module">import { renderKatex } from '/js/utils.js'
+document.addEventListener("DOMContentLoaded", () => {
+  renderKatex({
+    ...{},
+    ...undefined?.options,
+  });
+});</script><link rel="icon" type="image/svg+xml" href="/CelesteStrawberry/yun.svg"><link rel="mask-icon" href="/CelesteStrawberry/yun.svg" color="#0078E7"><link rel="preload" href="/CelesteStrawberry/css/hexo-theme-yun.css" as="style"><link rel="prefetch" href="/CelesteStrawberry/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="preconnect" href="https://fastly.jsdelivr.net/npm/" crossorigin><script id="yun-config">
+    window.Yun = {}
+    window.CONFIG = {"hostname":"example.com","root":"/CelesteStrawberry/","title":"草莓先森的小站","version":"1.10.11","mode":"auto","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}.","hits":"${hits} results found","hits_time":"${hits} results found in ${time} ms"},"anonymous_image":"https://cdn.yunyoujun.cn/img/avatar/none.jpg","say":{"api":"https://el-bot-api.vercel.app/api/words/young"},"vendors":{"host":"https://fastly.jsdelivr.net/npm/","darken":"https://fastly.jsdelivr.net/npm/darken@1.5.0"}};
+  </script><style>.code-tabs .code-block ::selection,
+.code-tabs pre::selection {
+  background-color: #4a6e8c;
+  color: #fff;
+}
+/* 代码块字体 */
+pre, code, kbd, samp {
+  font-family: Consolas, Monaco, 'SF Mono', monospace !important;
+}
+pre, code {
+  font-size: 17px !important;
+  line-height: 1.7 !important;
+}
+
+/* 头像圆形裁剪 */
+.site-author-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+.site-author-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+</style><link rel="stylesheet" href="/CelesteStrawberry/css/hexo-theme-yun.css"><link rel="stylesheet" href="/CelesteStrawberry/css/custom.css"><script src="/CelesteStrawberry/js/hexo-theme-yun.js" type="module"></script><script>document.addEventListener('pjax:complete', function() {
+if (typeof renderMathInElement !== 'undefined') {
+renderMathInElement(document.body, {
+delimiters: [
+{left: '$$', right: '$$', display: true},
+{left: '$', right: '$', display: false}
+]
+});
+}
+});</script><meta name="description" content="L1  L1-1 嫑废话上代码 (5分) Linux 之父 Linus Torvalds 的名言是：“Talk is cheap. Show me the code.”（嫑废话，上代码）。本题就请你直接在屏幕上输出这句话。 输入格式： 本题没有输入。 输出格式： 在一行中输出 Talk is cheap. Show me the code. 输入样例：         [in]">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2020团体程序设计天梯赛">
+<meta property="og:url" content="http://example.com/2026/03/30/%E5%9B%A2%E4%BD%93%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%A4%A9%E6%A2%AF%E8%B5%9B/2020%E5%A4%A9%E6%A2%AF%E8%B5%9B/2020%E5%A4%A9%E6%A2%AF%E8%B5%9B/index.html">
+<meta property="og:site_name" content="草莓先森的blog">
+<meta property="og:description" content="L1  L1-1 嫑废话上代码 (5分) Linux 之父 Linus Torvalds 的名言是：“Talk is cheap. Show me the code.”（嫑废话，上代码）。本题就请你直接在屏幕上输出这句话。 输入格式： 本题没有输入。 输出格式： 在一行中输出 Talk is cheap. Show me the code. 输入样例：         [in]">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="c:%5CUsers%5CHUAWEI%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20260413140030348.png">
+<meta property="og:image" content="http://example.com/CelesteStrawberry/images/L1-066.jpg">
+<meta property="og:image" content="http://example.com/CelesteStrawberry/images/picture1.jpg">
+<meta property="og:image" content="http://example.com/CelesteStrawberry/images/picture2.jpg">
+<meta property="og:image" content="http://example.com/CelesteStrawberry/images/p3.jpg">
+<meta property="og:image" content="http://example.com/CelesteStrawberry/images/L1-071-1.jpg">
+<meta property="og:image" content="http://example.com/CelesteStrawberry/images/L1-071-2.jpg">
+<meta property="og:image" content="http://example.com/CelesteStrawberry/images/L1-072.png">
+<meta property="article:published_time" content="2026-03-30T09:05:06.000Z">
+<meta property="article:modified_time" content="2026-03-31T13:41:10.000Z">
+<meta property="article:author" content="Celeste">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:%5CUsers%5CHUAWEI%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20260413140030348.png"><style>.highlight,
+.highlight pre,
+.highlight table,
+.highlight td,
+.highlight .gutter,
+.highlight .code {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* 复制按钮容器 */
+.code-block {
+  position: relative; /* 使按钮绝对定位相对于代码块 */
+}
+
+.copy-btn {
+  font-family: 'Maple Mono NF CN Medium';
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 4px 8px;
+  font-size: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: 10;
+}
+
+.code-block:hover .copy-btn {
+  opacity: 1;
+}
+
+.copy-btn.copied {
+  background: #28a745;
+}
+</style><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script><script>document.addEventListener('DOMContentLoaded', function() {
+hljs.highlightAll();
+});
+</script><script>class Circle {
+constructor({ origin, speed, color, angle, context }) {
+this.origin = origin
+this.position = { ...this.origin }
+this.color = color
+this.speed = speed
+this.angle = angle
+this.context = context
+this.renderCount = 0
+}
+draw() {
+this.context.fillStyle = this.color
+this.context.beginPath()
+this.context.arc(this.position.x, this.position.y, 2, 0, Math.PI * 2)
+this.context.fill()
+}
+move() {
+this.position.x = (Math.sin(this.angle) * this.speed) + this.position.x
+this.position.y = (Math.cos(this.angle) * this.speed) + this.position.y + (this.renderCount * 0.3)
+this.renderCount++
+}
+}
+
+class Boom {
+constructor({ origin, context, circleCount = 16, area }) {
+this.origin = origin
+this.context = context
+this.circleCount = circleCount
+this.area = area
+this.stop = false
+this.circles = []
+}
+randomArray(range) {
+const length = range.length
+const randomIndex = Math.floor(length * Math.random())
+return range[randomIndex]
+}
+randomColor() {
+const range = ['8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
+return '#' + this.randomArray(range) + this.randomArray(range) + this.randomArray(range) + this.randomArray(range) + this.randomArray(range) + this.randomArray(range)
+}
+randomRange(start, end) {
+return (end - start) * Math.random() + start
+}
+init() {
+for (let i = 0; i < this.circleCount; i++) {
+const circle = new Circle({
+context: this.context,
+origin: this.origin,
+color: this.randomColor(),
+angle: this.randomRange(Math.PI - 1, Math.PI + 1),
+speed: this.randomRange(1, 6)
+})
+this.circles.push(circle)
+}
+}
+move() {
+this.circles.forEach((circle, index) => {
+if (circle.position.x > this.area.width || circle.position.y > this.area.height) {
+return this.circles.splice(index, 1)
+}
+circle.move()
+})
+if (this.circles.length == 0) {
+this.stop = true
+}
+}
+draw() {
+this.circles.forEach(circle => circle.draw())
+}
+}
+
+class CursorSpecialEffects {
+constructor() {
+this.computerCanvas = document.createElement('canvas')
+this.renderCanvas = document.createElement('canvas')
+this.computerContext = this.computerCanvas.getContext('2d')
+this.renderContext = this.renderCanvas.getContext('2d')
+this.globalWidth = window.innerWidth
+this.globalHeight = window.innerHeight
+this.booms = []
+this.running = false
+}
+handleMouseDown(e) {
+const boom = new Boom({
+origin: { x: e.clientX, y: e.clientY },
+context: this.computerContext,
+area: { width: this.globalWidth, height: this.globalHeight }
+})
+boom.init()
+this.booms.push(boom)
+this.running || this.run()
+}
+handlePageHide() {
+this.booms = []
+this.running = false
+}
+init() {
+const style = this.renderCanvas.style
+style.position = 'fixed'
+style.top = style.left = 0
+style.zIndex = '999999999999999999999999999999999999999999'
+style.pointerEvents = 'none'
+style.width = this.renderCanvas.width = this.computerCanvas.width = this.globalWidth
+style.height = this.renderCanvas.height = this.computerCanvas.height = this.globalHeight
+document.body.append(this.renderCanvas)
+window.addEventListener('mousedown', this.handleMouseDown.bind(this))
+window.addEventListener('pagehide', this.handlePageHide.bind(this))
+}
+run() {
+this.running = true
+if (this.booms.length == 0) {
+return this.running = false
+}
+requestAnimationFrame(this.run.bind(this))
+this.computerContext.clearRect(0, 0, this.globalWidth, this.globalHeight)
+this.renderContext.clearRect(0, 0, this.globalWidth, this.globalHeight)
+this.booms.forEach((boom, index) => {
+if (boom.stop) {
+return this.booms.splice(index, 1)
+}
+boom.move()
+boom.draw()
+})
+this.renderContext.drawImage(this.computerCanvas, 0, 0, this.globalWidth, this.globalHeight)
+}
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+const cursorSpecialEffects = new CursorSpecialEffects();
+cursorSpecialEffects.init();
+});</script><div id="bg" style="background-image: url('/CelesteStrawberry/images/preview.jpg');"></div><script>(function() {
+const words = ["比比拉布", "我的刀盾", "咕咕嘎嘎", "我要验牌", "给我擦皮鞋", "辛巴巴"];
+let wordIndex = 0;
+document.addEventListener('click', function(e) {
+const word = words[wordIndex];
+const span = document.createElement('span');
+span.textContent = word;
+span.style.cssText = `
+      position: fixed;
+      z-index: 999999;
+      top: ${e.clientY - 28}px;
+      left: ${e.clientX - word.length * 8}px;
+      color: rgb(${~~(255 * Math.random())}, ${~~(255 * Math.random())}, ${~~(255 * Math.random())});
+      font-size: 16px;
+      font-weight: bold;
+      pointer-events: none;
+      opacity: 1;
+      transition: all 1.5s ease-out;
+    `;
+document.body.appendChild(span);
+setTimeout(() => {
+span.style.top = `${e.clientY - 180}px`;
+span.style.opacity = '0';
+}, 10);
+setTimeout(() => {
+span.remove();
+}, 1500);
+wordIndex = (wordIndex + 1) % words.length;
+});
+})();
+</script><style>/* 更高优先级 */
+html body {
+  font-size: 20px;
+}
+
+/* 或者限定在文章区域 */
+.post-body, .post-body p {
+  font-size: 23px;
+}
+.code-tabs {
+  margin: 1.5em 0;
+  border: 1px solid #e1e4e8;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.code-tabs-nav {
+  display: flex;
+  background: #f6f8fa;
+  border-bottom: 1px solid #e1e4e8;
+}
+.code-tab {
+  color: #24292f !important;
+  border: none;
+  background: none;
+  padding: 8px 16px;
+  font-size: 17px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+}
+.code-tab.active {
+  border-bottom-color: #0366d6;
+  color: #0969da !important;
+  border-bottom-color: #2f81f7;
+  font-weight: 500;
+}
+.code-tabs-content {
+  position: relative;
+}
+.code-block {
+  display: none;
+  margin: 0;
+  padding: 16px;
+  overflow-x: auto;
+}
+.code-block.active {
+  display: block;
+}
+@media (prefers-color-scheme: dark) {
+  .code-tabs {
+    border-color: #30363d;
+  }
+  .code-tabs-nav {
+    background: #0d1117;
+    border-bottom-color: #30363d;
+  }
+  .code-tab {
+    color: #c9d1d9 !important;
+  }
+  .code-tab.active {
+    border-bottom-color: #2f81f7;
+    color: #58a6ff !important;
+  }
+}
+</style><script>document.addEventListener('DOMContentLoaded', function() {
+const containers = document.querySelectorAll('.code-tabs');
+if (!containers.length) return;
+
+function highlightBlock(block) {
+if (typeof hljs !== 'undefined') {
+const codes = block.querySelectorAll('pre code');
+codes.forEach(code => {
+try {
+hljs.highlightElement(code);
+} catch (e) {
+console.warn('Highlight failed', e);
+}
+});
+}
+}
+
+containers.forEach(container => {
+const tabs = container.querySelectorAll('.code-tab');
+const content = container.querySelector('.code-tabs-content');
+const blocks = container.querySelectorAll('.code-block');
+
+// 初始状态：检查是否有默认激活的选项卡
+let hasActiveTab = Array.from(tabs).some(t => t.classList.contains('active'));
+
+if (!hasActiveTab) {
+  // 没有默认激活的，全部隐藏
+  blocks.forEach(b => { b.style.display = 'none'; });
+  if (content) content.style.display = 'none';
+}
+
+tabs.forEach(tab => {
+tab.addEventListener('click', function(e) {
+e.preventDefault();
+e.stopPropagation();
+const lang = this.dataset.lang;
+const isAlreadyActive = this.classList.contains('active');
+
+if (isAlreadyActive) {
+  this.classList.remove('active');
+  blocks.forEach(b => { b.style.display = 'none'; });
+  if (content) content.style.display = 'none';
+} else {
+  tabs.forEach(t => t.classList.remove('active'));
+  this.classList.add('active');
+  if (content) content.style.display = 'block';
+  blocks.forEach(block => {
+  if (block.dataset.lang === lang) {
+  block.style.display = 'block';
+  highlightBlock(block);
+  } else {
+  block.style.display = 'none';
+  }
+  });
+}
+});
+});
+});
+});</script><script>document.addEventListener('DOMContentLoaded', function() {
+// 为每个代码块添加复制按钮
+const codeBlocks = document.querySelectorAll('.code-block');
+codeBlocks.forEach(block => {
+// 避免重复添加
+if (block.querySelector('.copy-btn')) return;
+
+const btn = document.createElement('button');
+btn.className = 'copy-btn';
+btn.textContent = 'COPY';
+block.appendChild(btn);
+
+btn.addEventListener('click', async function(e) {
+e.stopPropagation();
+// 获取代码文本（从 <pre><code> 中提取）
+const codeElem = block.querySelector('pre code');
+const text = codeElem ? codeElem.innerText : '';
+if (!text) return;
+
+try {
+await navigator.clipboard.writeText(text);
+btn.textContent = 'COPIED!';
+btn.classList.add('copied');
+setTimeout(() => {
+btn.textContent = 'COPY';
+btn.classList.remove('copied');
+}, 2000);
+} catch (err) {
+console.error('复制失败', err);
+btn.textContent = 'FAILED';
+setTimeout(() => btn.textContent = 'COPY', 1000);
+}
+});
+});
+});</script><script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script>(function() {
+  if (CONFIG.mode !== 'auto') return
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+  const setting = localStorage.getItem('darken-mode') || 'auto'
+  if (setting === 'dark' || (prefersDark && setting !== 'light'))
+    document.documentElement.classList.toggle('dark', true)
+})()</script></head><body><script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script><script>// Define global variable
+IconifyProviders = {
+  // Empty prefix: overwrite default API provider configuration
+  '': {
+    // Use custom API first, use Iconify public API as backup
+    resources: [
+        'https://api.iconify.design',
+    ],
+    // Wait for 1 second before switching API hosts
+    rotate: 1000,
+  },
+};</script><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/CelesteStrawberry/js/sidebar.js" type="module"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="Table of Contents"><span class="icon iconify" data-icon="ri:list-ordered"></span></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="Overview"><span class="icon iconify" data-icon="ri:passport-line"></span></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/CelesteStrawberry/about/" title="Celeste"><img width="96" loading="lazy" src="/CelesteStrawberry/images/avatar.jpg" alt="Celeste"></a><div class="site-author-name"><a href="/CelesteStrawberry/about/">Celeste</a></div><span class="site-name">草莓先森的blog</span><sub class="site-subtitle">🍓</sub><div class="site-description"></div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/CelesteStrawberry/" title="Home"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:home-4-line"></span></span></a><div class="site-state-item"><a href="/CelesteStrawberry/archives/" title="Archives"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:archive-line"></span></span><span class="site-state-item-count">6</span></a></div><div class="site-state-item"><a href="/CelesteStrawberry/categories/" title="Categories"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:folder-2-line"></span></span><span class="site-state-item-count">4</span></a></div><div class="site-state-item"><a href="/CelesteStrawberry/tags/" title="Tags"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="site-state-item-count">0</span></a></div><a class="site-state-item hty-icon-button" href="https://yun.yunyoujun.cn" title="文档"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:settings-line"></span></span></a></nav><hr style="margin-bottom:0.5rem"><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/CelesteStrawberry/links/" title="我的小伙伴们" style="color:dodgerblue"><span class="icon iconify" data-icon="ri:genderless-line"></span></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><span class="icon iconify" data-icon="ri:contrast-2-line"></span></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#l1"><span class="toc-number">1.</span> <span class="toc-text"> L1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#l1-1-%E5%AB%91%E5%BA%9F%E8%AF%9D%E4%B8%8A%E4%BB%A3%E7%A0%81-5%E5%88%86"><span class="toc-number">1.1.</span> <span class="toc-text"> L1-1 嫑废话上代码 (5分)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 解析：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 代码：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#l1-2-%E7%8C%AB%E6%98%AF%E6%B6%B2%E4%BD%93-5%E5%88%86"><span class="toc-number">1.2.</span> <span class="toc-text"> L1-2 猫是液体 (5分)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-2"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 解析：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81-2"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 代码：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#l1-3-%E6%B4%9B%E5%B8%8C%E6%9E%81%E9%99%90-10%E5%88%86"><span class="toc-number">1.3.</span> <span class="toc-text"> L1-3 洛希极限 (10分)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-3"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 解析：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81-3"><span class="toc-number">1.3.2.</span> <span class="toc-text"> 代码：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#l1-4-%E8%B0%83%E5%92%8C%E5%B9%B3%E5%9D%87-10%E5%88%86"><span class="toc-number">1.4.</span> <span class="toc-text"> L1-4 调和平均 (10分)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-4"><span class="toc-number">1.4.1.</span> <span class="toc-text"> 解析：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81-4"><span class="toc-number">1.4.2.</span> <span class="toc-text"> 代码：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#l1-5-%E8%83%8E%E5%8E%8B%E7%9B%91%E6%B5%8B-15%E5%88%86"><span class="toc-number">1.5.</span> <span class="toc-text"> L1-5 胎压监测 (15分)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-5"><span class="toc-number">1.5.1.</span> <span class="toc-text"> 解析：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81-5"><span class="toc-number">1.5.2.</span> <span class="toc-text"> 代码：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#l1-6-%E5%90%83%E7%81%AB%E9%94%85-15%E5%88%86"><span class="toc-number">1.6.</span> <span class="toc-text"> L1-6 吃火锅 (15分)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-6"><span class="toc-number">1.6.1.</span> <span class="toc-text"> 解析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81-6"><span class="toc-number">1.6.2.</span> <span class="toc-text"> 代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#l1-7-%E5%89%8D%E4%B8%96%E6%A1%A3%E6%A1%88-20%E5%88%86"><span class="toc-number">1.7.</span> <span class="toc-text"> L1-7 前世档案 (20分)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-7"><span class="toc-number">1.7.1.</span> <span class="toc-text"> 解析：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81-7"><span class="toc-number">1.7.2.</span> <span class="toc-text"> 代码：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#l1-8-%E5%88%AE%E5%88%AE%E5%BD%A9%E7%A5%A8-20%E5%88%86"><span class="toc-number">1.8.</span> <span class="toc-text"> L1-8 刮刮彩票 (20分)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-8"><span class="toc-number">1.8.1.</span> <span class="toc-text"> 解析：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81-8"><span class="toc-number">1.8.2.</span> <span class="toc-text"> 代码：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#l2"><span class="toc-number">2.</span> <span class="toc-text"> L2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#l2-1-%E7%AE%80%E5%8D%95%E8%AE%A1%E7%AE%97%E5%99%A8"><span class="toc-number">2.1.</span> <span class="toc-text"> L2-1 简单计算器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-9"><span class="toc-number">2.1.1.</span> <span class="toc-text"> 解析：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81-9"><span class="toc-number">2.1.2.</span> <span class="toc-text"> 代码：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#l2-2-%E5%8F%A3%E7%BD%A9%E5%8F%91%E6%94%BE"><span class="toc-number">2.2.</span> <span class="toc-text"> L2-2 口罩发放</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-10"><span class="toc-number">2.2.1.</span> <span class="toc-text"> 解析：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81-10"><span class="toc-number">2.2.2.</span> <span class="toc-text"> 代码：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#l2-3-%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="toc-number">2.3.</span> <span class="toc-text"> L2-3 完全二叉树的层序遍历</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-11"><span class="toc-number">2.3.1.</span> <span class="toc-text"> 解析：</span></a></li></ol></li></ol></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article" style="--smc-primary:#0078E7;"><link itemprop="mainEntityOfPage" href="http://example.com/CelesteStrawberry/2026/03/30/%E5%9B%A2%E4%BD%93%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%A4%A9%E6%A2%AF%E8%B5%9B/2020%E5%A4%A9%E6%A2%AF%E8%B5%9B/2020%E5%A4%A9%E6%A2%AF%E8%B5%9B/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="Celeste"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="草莓先森的blog"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">2020团体程序设计天梯赛</h1><div class="post-meta"><div class="post-time"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-line"></span></span> <time title="Created: 2026-03-30 17:05:06" itemprop="dateCreated datePublished" datetime="2026-03-30T17:05:06+08:00">2026-03-30</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-2-line"></span></span> <time title="Modified: 2026-03-31 21:41:10" itemprop="dateModified" datetime="2026-03-31T21:41:10+08:00">2026-03-31</time></div><span class="post-busuanzi"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="Views"><span class="icon iconify" data-icon="ri:eye-line"></span> <span id="busuanzi_value_page_pv"></span></span></span><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><span class="icon iconify" data-icon="ri:folder-line"></span></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/CelesteStrawberry/categories/%E5%9B%A2%E4%BD%93%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%A4%A9%E6%A2%AF%E8%B5%9B/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">团体程序设计天梯赛</span></a></span> > <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/CelesteStrawberry/categories/%E5%9B%A2%E4%BD%93%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%A4%A9%E6%A2%AF%E8%B5%9B/2020%E5%A4%A9%E6%A2%AF%E8%B5%9B/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">2020天梯赛</span></a></span></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body"><h2 id="l1"><a class="markdownIt-Anchor" href="#l1"></a> L1</h2>
+<h3 id="l1-1-嫑废话上代码-5分"><a class="markdownIt-Anchor" href="#l1-1-嫑废话上代码-5分"></a> L1-1 嫑废话上代码 (5分)</h3>
+<p>Linux 之父 Linus Torvalds 的名言是：“<code>Talk is cheap. Show me the code.</code>”（嫑废话，上代码）。本题就请你直接在屏幕上输出这句话。</p>
+<p><strong>输入格式：</strong></p>
+<p>本题没有输入。</p>
+<p><strong>输出格式：</strong></p>
+<p>在一行中输出 <code>Talk is cheap. Show me the code.</code></p>
+<p><strong>输入样例：</strong></p>
+<div class="code-tabs">
+  <div class="code-tabs-nav">
+    <button class="code-tab" data-lang="bash" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">[in]</button>
+  </div>
+  <div class="code-tabs-content">
+    <div class="code-block" data-lang="bash">
+      <pre><code class="language-bash">无</code></pre>
+    </div>
+  </div>
+</div>
+<p><strong>输出样例：</strong></p>
+<div class="code-tabs">
+  <div class="code-tabs-nav">
+    <button class="code-tab" data-lang="bash" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">[out]</button>
+  </div>
+  <div class="code-tabs-content">
+    <div class="code-block" data-lang="bash">
+      <pre><code class="language-bash">Talk is cheap. Show me the code.</code></pre>
+    </div>
+  </div>
+</div>
+<h4 id="解析"><a class="markdownIt-Anchor" href="#解析"></a> 解析：</h4>
+<p>要什么解析直接上代码！！简单的输出一句话就好了！第一题送分哈。</p>
+<p><img src="C:%5CUsers%5CHUAWEI%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20260413140030348.png" alt="image-20260413140030348" / loading="lazy"></p>
+<h4 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码：</h4>
+<div class="code-tabs">
+  <div class="code-tabs-nav">
+    <button class="code-tab" data-lang="cpp" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">C++</button>
+    <button class="code-tab" data-lang="python" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">Python</button>
+  </div>
+  <div class="code-tabs-content">
+    <div class="code-block" data-lang="cpp">
+      <pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+int main() {
+    cout << "Talk is cheap. Show me the code." << endl;
+    return 0;
+}</code></pre>
+    </div>
+    <div class="code-block" data-lang="python">
+      <pre><code class="language-python">print("Talk is cheap. Show me the code.")</code></pre>
+    </div>
+  </div>
+</div>
+<hr />
+<h3 id="l1-2-猫是液体-5分"><a class="markdownIt-Anchor" href="#l1-2-猫是液体-5分"></a> L1-2 猫是液体 (5分)</h3>
+<p><img src="/CelesteStrawberry/images/L1-066.jpg" alt="cat.jpg" / loading="lazy"></p>
+<p>测量一个人的体积是很难的，但猫就不一样了。因为猫是液体，所以可以很容易地通过测量一个长方体容器的容积来得到容器里猫的体积。本题就请你完成这个计算。</p>
+<p><strong>输入格式：</strong><br />
+输入在第一行中给出 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span> 个不超过 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>100</mn></mrow><annotation encoding="application/x-tex">100</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span></span></span></span> 的正整数，分别对应容器的长、宽、高。</p>
+<p><strong>输出格式：</strong><br />
+在一行中输出猫的体积。</p>
+<p><strong>输入样例：</strong></p>
+<div class="code-tabs">
+  <div class="code-tabs-nav">
+    <button class="code-tab" data-lang="bash" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">[in]</button>
+  </div>
+  <div class="code-tabs-content">
+    <div class="code-block" data-lang="bash">
+      <pre><code class="language-bash">23 15 20</code></pre>
+    </div>
+  </div>
+</div>
+<p><strong>输出样例：</strong></p>
+<div class="code-tabs">
+  <div class="code-tabs-nav">
+    <button class="code-tab" data-lang="bash" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">[out]</button>
+  </div>
+  <div class="code-tabs-content">
+    <div class="code-block" data-lang="bash">
+      <pre><code class="language-bash">6900</code></pre>
+    </div>
+  </div>
+</div>
+<h4 id="解析-2"><a class="markdownIt-Anchor" href="#解析-2"></a> 解析：</h4>
+<span style="font-size: 16px;">
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>长方体体积</mtext><mo>=</mo><mtext>长</mtext><mo>×</mo><mtext>宽</mtext><mo>×</mo><mtext>高</mtext></mrow><annotation encoding="application/x-tex">长方体体积=长×宽×高</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">长</span><span class="mord cjk_fallback">方</span><span class="mord cjk_fallback">体</span><span class="mord cjk_fallback">体</span><span class="mord cjk_fallback">积</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord cjk_fallback">长</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord cjk_fallback">宽</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">高</span></span></span></span>，就是这样</p>
+</span>
+<h4 id="代码-2"><a class="markdownIt-Anchor" href="#代码-2"></a> 代码：</h4>
+<div class="code-tabs">
+  <div class="code-tabs-nav">
+    <button class="code-tab" data-lang="cpp" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">C++</button>
+    <button class="code-tab" data-lang="python" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">Python</button>
+  </div>
+  <div class="code-tabs-content">
+    <div class="code-block" data-lang="cpp">
+      <pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+int main() {
+    int a, b, c;
+    cin >> a >> b >> c;
+    cout << a * b * c;
+    return 0;
+}</code></pre>
+    </div>
+    <div class="code-block" data-lang="python">
+      <pre><code class="language-python">a, b, c = map(int, input().split())
+print(a * b * c)
+</code></pre>
+    </div>
+  </div>
+</div>
+<hr />
+<h3 id="l1-3-洛希极限-10分"><a class="markdownIt-Anchor" href="#l1-3-洛希极限-10分"></a> L1-3 洛希极限 (10分)</h3>
+<p>科幻电影《流浪地球》中一个重要的情节是地球距离木星太近时，大气开始被木星吸走，而随着不断接近地木&quot;刚体洛希极限&quot;，地球面临被彻底撕碎的危险。但实际上，这个计算是错误的。</p>
+<p><img src="/CelesteStrawberry/images/picture1.jpg" alt="roche.jpg" / loading="lazy"></p>
+<p>洛希极限（Roche limit）是一个天体自身的引力与第二个天体造成的潮汐力相等时的距离。当两个天体的距离少于洛希极限，天体就会倾向碎散，继而成为第二个天体的环。它以首位计算这个极限的人爱德华·洛希命名。（摘自百度百科）</p>
+<p>大天体密度与小天体的密度的比值开 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span> 次方后，再乘以大天体的半径以及一个倍数（流体对应的倍数是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2.455</mn></mrow><annotation encoding="application/x-tex">2.455</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">.</span><span class="mord">4</span><span class="mord">5</span><span class="mord">5</span></span></span></span>，刚体对应的倍数是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.26</mn></mrow><annotation encoding="application/x-tex">1.26</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">.</span><span class="mord">2</span><span class="mord">6</span></span></span></span>），就是洛希极限的值。例如木星与地球的密度比值开 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span> 次方是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.622</mn></mrow><annotation encoding="application/x-tex">0.622</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">6</span><span class="mord">2</span><span class="mord">2</span></span></span></span>，如果假设地球是流体，那么洛希极限就是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.622</mn><mo>×</mo><mn>2.455</mn><mo>=</mo><mn>1.52701</mn></mrow><annotation encoding="application/x-tex">0.622×2.455=1.52701</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">6</span><span class="mord">2</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">.</span><span class="mord">4</span><span class="mord">5</span><span class="mord">5</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">.</span><span class="mord">5</span><span class="mord">2</span><span class="mord">7</span><span class="mord">0</span><span class="mord">1</span></span></span></span> 倍木星半径；但地球是刚体，对应的洛希极限是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.622</mn><mo>×</mo><mn>1.26</mn><mo>=</mo><mn>0.78372</mn></mrow><annotation encoding="application/x-tex">0.622×1.26=0.78372</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">6</span><span class="mord">2</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">.</span><span class="mord">2</span><span class="mord">6</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">7</span><span class="mord">8</span><span class="mord">3</span><span class="mord">7</span><span class="mord">2</span></span></span></span> 倍木星半径，这个距离比木星半径小，即只有当地球位于木星内部的时候才会被撕碎，换言之，就是地球不可能被撕碎。</p>
+<p>本题就请你判断一个小天体会不会被一个大天体撕碎。</p>
+<p><strong>输入格式：</strong><br />
+输入在一行中给出 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span> 个数字，依次为：大天体密度与小天体的密度的比值开 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span> 次方后计算出的值（<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≤</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">≤1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>）、小天体的属性（<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> 表示流体、<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 表示刚体）、两个天体的距离与大天体半径的比值（<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&gt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">&gt;1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 但不超过 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>10</mn></mrow><annotation encoding="application/x-tex">10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span></span></span></span>）。</p>
+<p><strong>输出格式：</strong><br />
+在一行中首先输出小天体的洛希极限与大天体半径的比值（输出小数点后<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>位）；随后空一格；最后输出 <sup>_</sup> 如果小天体不会被撕碎，否则输出 T_T。</p>
+<p><strong>输入样例1：</strong></p>
+<div class="code-tabs">
+  <div class="code-tabs-nav">
+    <button class="code-tab" data-lang="bash" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">[in]</button>
+  </div>
+  <div class="code-tabs-content">
+    <div class="code-block" data-lang="bash">
+      <pre><code class="language-bash">0.622 0 1.4</code></pre>
+    </div>
+  </div>
+</div>
+<p><strong>输出样例1：</strong></p>
+<div class="code-tabs">
+  <div class="code-tabs-nav">
+    <button class="code-tab" data-lang="bash" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">[out]</button>
+  </div>
+  <div class="code-tabs-content">
+    <div class="code-block" data-lang="bash">
+      <pre><code class="language-bash">1.53 T_T</code></pre>
+    </div>
+  </div>
+</div>
+<p><strong>输入样例2：</strong></p>
+<div class="code-tabs">
+  <div class="code-tabs-nav">
+    <button class="code-tab" data-lang="bash" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">[in]</button>
+  </div>
+  <div class="code-tabs-content">
+    <div class="code-block" data-lang="bash">
+      <pre><code class="language-bash">0.622 1 1.4</code></pre>
+    </div>
+  </div>
+</div>
+<p><strong>输出样例2：</strong></p>
+<div class="code-tabs">
+  <div class="code-tabs-nav">
+    <button class="code-tab" data-lang="bash" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">[out]</button>
+  </div>
+  <div class="code-tabs-content">
+    <div class="code-block" data-lang="bash">
+      <pre><code class="language-bash">0.78 ^_^</code></pre>
+    </div>
+  </div>
+</div>
+<h4 id="解析-3"><a class="markdownIt-Anchor" href="#解析-3"></a> 解析：</h4>
+<p>题有点长，但是作为L1的签到题，也真的难不到哪里去。</p>
+<p>具体来说，洛希极限是<strong>大天体密度与小天体的密度的比值开 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span> 次方后，再乘以大天体的半径以及一个倍数（流体对应的倍数是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2.455</mn></mrow><annotation encoding="application/x-tex">2.455</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">.</span><span class="mord">4</span><span class="mord">5</span><span class="mord">5</span></span></span></span>，刚体对应的倍数是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.26</mn></mrow><annotation encoding="application/x-tex">1.26</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">.</span><span class="mord">2</span><span class="mord">6</span></span></span></span>）</strong>，然后咱们输入的第一个参数（设为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span>）已经把比值计算好了，所以我们只需要看第二个参数（设为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathnormal">t</span></span></span></span>）的天体类型就可以算出洛希极限（<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi><mi>i</mi><mi>m</mi><mi>i</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">limit</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">i</span><span class="mord mathnormal">m</span><span class="mord mathnormal">i</span><span class="mord mathnormal">t</span></span></span></span>）。</p>
+<p>最后，我们将所得值与第三个参数（设为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi></mrow><annotation encoding="application/x-tex">d</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">d</span></span></span></span>）比较，注意题面这个信息&quot;<strong>当两个天体的距离少于洛希极限</strong>&quot;，所以我们可以知道：</p>
+<span style="font_size: 20px">
+<ul>
+<li>当<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>&gt;</mo><mo>=</mo><mi>l</mi><mi>i</mi><mi>m</mi><mi>i</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">d&gt;=limit</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.73354em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">d</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">i</span><span class="mord mathnormal">m</span><span class="mord mathnormal">i</span><span class="mord mathnormal">t</span></span></span></span>：输出中含有<code>&quot;^_^&quot;</code></li>
+<li>当<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>&lt;</mo><mi>l</mi><mi>i</mi><mi>m</mi><mi>i</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">d&lt;limit</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.73354em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">d</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">i</span><span class="mord mathnormal">m</span><span class="mord mathnormal">i</span><span class="mord mathnormal">t</span></span></span></span>：输出中含有<code>&quot;T_T&quot;</code></li>
+</ul>
+</span>
+<p>现在整个题目思路就很清楚了，直接上代码！</p>
+<h4 id="代码-3"><a class="markdownIt-Anchor" href="#代码-3"></a> 代码：</h4>
+<div class="code-tabs">
+  <div class="code-tabs-nav">
+    <button class="code-tab" data-lang="cpp" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">C++</button>
+    <button class="code-tab" data-lang="python" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">Python</button>
+  </div>
+  <div class="code-tabs-content">
+    <div class="code-block" data-lang="cpp">
+      <pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+int main(){
+    double k, d, type[2] = {2.455, 1.26};
+    int t;
+    cin >> k >> t >> d;
+    double limit = k * type[t];
+    if(d >= limit){
+        printf("%.2lf ^_^", limit);
+    }
+    else{
+        printf("%.2lf T_T", limit);
+    }
+    return 0;
+}</code></pre>
+    </div>
+    <div class="code-block" data-lang="python">
+      <pre><code class="language-python">k, t, d = input().split()
+k = float(k)
+t = int(t)
+d = float(d)
+type_ = [2.455, 1.26]
+limit = k * type_[t]
+if d >= limit:
+    print(f"{limit:.2f} ^_^", end='')
+else:
+    print(f"{limit:.2f} T_T", end='')
+    </code></pre>
+    </div>
+  </div>
+</div>
+<hr />
+<h3 id="l1-4-调和平均-10分"><a class="markdownIt-Anchor" href="#l1-4-调和平均-10分"></a> L1-4 调和平均 (10分)</h3>
+<p>N 个正数的算数平均是这些数的和除以 N，它们的调和平均是它们倒数的算数平均的倒数。本题就请你计算给定的一系列正数的调和平均值。</p>
+<p><strong>输入格式：</strong><br />
+每个输入包含 1 个测试用例。每个测试用例第 1 行给出正整数 N (≤1000)；第 2 行给出 N 个正数，都在区间 [0.1,100] 内。</p>
+<p><strong>输出格式：</strong><br />
+在一行中输出给定数列的调和平均值，输出小数点后2位。</p>
+<p><strong>输入样例：</strong></p>
+<div class="code-tabs">
+  <div class="code-tabs-nav">
+    <button class="code-tab" data-lang="bash" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">[in]</button>
+  </div>
+  <div class="code-tabs-content">
+    <div class="code-block" data-lang="bash">
+      <pre><code class="language-bash">8
+10 15 12.7 0.3 4 13 1 15.6</code></pre>
+    </div>
+  </div>
+</div>
+<p><strong>输出样例：</strong></p>
+<div class="code-tabs">
+  <div class="code-tabs-nav">
+    <button class="code-tab" data-lang="bash" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">[out]</button>
+  </div>
+  <div class="code-tabs-content">
+    <div class="code-block" data-lang="bash">
+      <pre><code class="language-bash">1.61</code></pre>
+    </div>
+  </div>
+</div>
+<h4 id="解析-4"><a class="markdownIt-Anchor" href="#解析-4"></a> 解析：</h4>
+<p>算术平均值：</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mn>1</mn><mi>n</mi></mfrac><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mi>n</mi></munderover><msub><mi>x</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\frac{1}{n}\sum_{i=0}^{n}x_i
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.929066em;vertical-align:-1.277669em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">n</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6513970000000002em;"><span style="top:-1.872331em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">0</span></span></span></span><span style="top:-3.050005em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.3000050000000005em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.277669em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></p>
+<p>调和平均值：</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mi>n</mi><mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mi>n</mi></munderover><mfrac><mn>1</mn><msub><mi>x</mi><mi>i</mi></msub></mfrac></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{n}{\sum_{i=0}^{n}\frac{1}{x_i}}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.287768em;vertical-align:-1.180208em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.10756em;"><span style="top:-2.264892em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.804292em;"><span style="top:-2.40029em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">0</span></span></span></span><span style="top:-3.2029em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.29971000000000003em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3280857142857143em;"><span style="top:-2.357em;margin-left:0em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.44509999999999994em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.180208em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<p>然后程序计算就行了，上代码！</p>
+<h4 id="代码-4"><a class="markdownIt-Anchor" href="#代码-4"></a> 代码：</h4>
+<div class="code-tabs">
+  <div class="code-tabs-nav">
+    <button class="code-tab" data-lang="cpp" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">C++</button>
+    <button class="code-tab" data-lang="python" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">Python</button>
+  </div>
+  <div class="code-tabs-content">
+    <div class="code-block" data-lang="cpp">
+      <pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+int main(){
+    int n;
+    cin >> n;
+    vector&lt;double&gt; arr;
+    double k;
+    for(int i = 0; i < n; i++){
+        cin >> k;
+        arr.push_back(k);
+    }
+    double sum = 0.0;
+    for(int i = 0; i < n; i++){
+        sum += 1.0 / arr[i];
+    }
+    double ans = n / sum;
+    printf("%.2lf", ans);
+    return 0;
+}</code></pre>
+    </div>
+    <div class="code-block" data-lang="python">
+      <pre><code class="language-python">n = int(input())
+arr = []
+for _ in range(n):
+    arr.append(float(input()))
+sum_inv = 0.0
+for x in arr:
+    sum_inv += 1.0 / x
+ans = n / sum_inv
+print("{:.2f}".format(ans), end='')</code></pre>
+    </div>
+  </div>
+</div>
+<hr />
+<h3 id="l1-5-胎压监测-15分"><a class="markdownIt-Anchor" href="#l1-5-胎压监测-15分"></a> L1-5 胎压监测 (15分)</h3>
+<p>小轿车中有一个系统随时监测四个车轮的胎压，如果四轮胎压不是很平衡，则可能对行车造成严重的影响。</p>
+<p><img src="/CelesteStrawberry/images/picture2.jpg" alt="ptausercontent" / loading="lazy"></p>
+<p>让我们把四个车轮 —— 左前轮、右前轮、右后轮、左后轮 —— 顺次编号为 1、2、3、4。本题就请你编写一个监测程序，随时监测四轮的胎压，并给出正确的报警信息。报警规则如下：</p>
+<p>如果所有轮胎的压力值与它们中的最大值误差在一个给定阈值内，并且都不低于系统设定的最低报警胎压，则说明情况正常，不报警；<br />
+如果存在一个轮胎的压力值与它们中的最大值误差超过了阈值，或者低于系统设定的最低报警胎压，则不仅要报警，而且要给出可能漏气的轮胎的准确位置；<br />
+如果存在两个或两个以上轮胎的压力值与它们中的最大值误差超过了阈值，或者低于系统设定的最低报警胎压，则报警要求检查所有轮胎。</p>
+<p><strong>输入格式：</strong><br />
+输入在一行中给出 6 个 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mn>0</mn><mo separator="true">,</mo><mn>400</mn><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[0, 400]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">4</span><span class="mord">0</span><span class="mord">0</span><span class="mclose">]</span></span></span></span> 范围内的整数，依次为 1~4 号轮胎的胎压、最低报警胎压、以及胎压差的阈值。</p>
+<p><strong>输出格式：</strong><br />
+根据输入的胎压值给出对应信息：</p>
+<ul>
+<li>
+<p>如果不用报警，输出 <code>Normal</code>；</p>
+</li>
+<li>
+<p>如果有一个轮胎需要报警，输出 <code>Warning: please check #X!</code>，其中 <code>X</code> 是出问题的轮胎的编号；</p>
+</li>
+<li>
+<p>如果需要检查所有轮胎，输出 <code>Warning: please check all the tires!</code>。</p>
+</li>
+</ul>
+<p><strong>输入样例1：</strong></p>
+<div class="code-tabs">
+  <div class="code-tabs-nav">
+    <button class="code-tab" data-lang="bash" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">[in]</button>
+  </div>
+  <div class="code-tabs-content">
+    <div class="code-block" data-lang="bash">
+      <pre><code class="language-bash">242 251 231 248 230 20</code></pre>
+    </div>
+  </div>
+</div>
+<p><strong>输出样例1：</strong></p>
+<div class="code-tabs">
+  <div class="code-tabs-nav">
+    <button class="code-tab" data-lang="bash" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">[out]</button>
+  </div>
+  <div class="code-tabs-content">
+    <div class="code-block" data-lang="bash">
+      <pre><code class="language-bash">Normal</code></pre>
+    </div>
+  </div>
+</div>
+<p><strong>输入样例2：</strong></p>
+<div class="code-tabs">
+  <div class="code-tabs-nav">
+    <button class="code-tab" data-lang="bash" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">[in]</button>
+  </div>
+  <div class="code-tabs-content">
+    <div class="code-block" data-lang="bash">
+      <pre><code class="language-bash">242 251 232 248 230 10</code></pre>
+    </div>
+  </div>
+</div>
+<p><strong>输出样例2：</strong></p>
+<div class="code-tabs">
+  <div class="code-tabs-nav">
+    <button class="code-tab" data-lang="bash" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">[out]</button>
+  </div>
+  <div class="code-tabs-content">
+    <div class="code-block" data-lang="bash">
+      <pre><code class="language-bash">Warning: please check #3!</code></pre>
+    </div>
+  </div>
+</div>
+<p><strong>输入样例3：</strong></p>
+<div class="code-tabs">
+  <div class="code-tabs-nav">
+    <button class="code-tab" data-lang="bash" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">[in]</button>
+  </div>
+  <div class="code-tabs-content">
+    <div class="code-block" data-lang="bash">
+      <pre><code class="language-bash">240 251 232 248 240 10</code></pre>
+    </div>
+  </div>
+</div>
+<p><strong>输出样例3：</strong></p>
+<div class="code-tabs">
+  <div class="code-tabs-nav">
+    <button class="code-tab" data-lang="bash" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">[out]</button>
+  </div>
+  <div class="code-tabs-content">
+    <div class="code-block" data-lang="bash">
+      <pre><code class="language-bash">Warning: please check all the tires!</code></pre>
+    </div>
+  </div>
+</div>
+<h4 id="解析-5"><a class="markdownIt-Anchor" href="#解析-5"></a> 解析：</h4>
+<p>分支结构练习题，大概每年都会出一道题。</p>
+<p>胎压正常的两个必要条件：</p>
+<span style="font_size: 20px;">
+<ul>
+<li><strong>极差小于等于阈值</strong></li>
+<li><strong>大于等于系统最低报警胎压</strong></li>
+</ul>
+</span>
+<p>那咱们遍历四个轮胎的胎压，设置<code>cnt</code>记录不满足正常胎压的轮胎个数，<code>flag</code>记录是否有两个及以上轮胎出现问题（初始<code>flag=false</code>）。</p>
+<span style="font_size: 20px;">
+<ul>
+<li>
+<p>若<code>flag=true</code>就输出<code>Warning: please check all the tires!</code></p>
+</li>
+<li>
+<p>若<code>flag=false</code> 并且 <code>cnt=1</code>就输出<code>Warning: please check #(胎压不正常的轮胎序号)!</code></p>
+</li>
+<li>
+<p>若<code>flag=false</code> 并且 <code>cnt=0</code>，输出<code>Normal</code></p>
+</li>
+</ul>
+</span>
+<p>这个题就分析完了，直接上代码！</p>
+<h4 id="代码-5"><a class="markdownIt-Anchor" href="#代码-5"></a> 代码：</h4>
+<div class="code-tabs">
+  <div class="code-tabs-nav">
+    <button class="code-tab" data-lang="cpp" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">C++</button>
+    <button class="code-tab" data-lang="python" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">Python</button>
+  </div>
+  <div class="code-tabs-content">
+    <div class="code-block" data-lang="cpp">
+      <pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+int main(){
+    vector&lt;int&gt; data(4);
+    int la, ra;
+    for(int i = 0; i < 4; i++){
+        cin >> data[i];
+    }
+    cin >> la >> ra;
+    int maxn = *max_element(data.begin(), data.end());
+    int cnt = 0;
+    bool flag = false;
+    int index = -1;
+    for(int i = 0; i < 4; i++){
+        if(maxn - data[i] > ra || data[i] < la){
+            cnt++;
+            if(cnt > 1){ 
+                flag = true;
+                break;
+            }
+            index = i;
+        }
+    }
+    if(flag){
+        printf("Warning: please check all the tires!");
+    }
+    else{
+        if(cnt == 1){
+            printf("Warning: please check #%d!", index + 1);
+        }
+        else{
+            printf("Normal");
+        }
+    }
+    return 0;
+}</code></pre>
+    </div>
+    <div class="code-block" data-lang="python">
+      <pre><code class="language-python">data = [int(input()) for _ in range(4)]
+la, ra = map(int, input().split())
+maxn = max(data)
+cnt = 0
+flag = False
+index = -1
+for i, val in enumerate(data):
+    if maxn - val > ra or val < la:
+        cnt += 1
+        if cnt > 1:
+            flag = True
+            break
+        index = i
+if flag:
+    print("Warning: please check all the tires!")
+else:
+    if cnt == 1:
+        print(f"Warning: please check #{index + 1}!")
+    else:
+        print("Normal")</code></pre>
+    </div>
+  </div>
+</div>
+<hr />
+<h3 id="l1-6-吃火锅-15分"><a class="markdownIt-Anchor" href="#l1-6-吃火锅-15分"></a> L1-6 吃火锅 (15分)</h3>
+<p><img src="/CelesteStrawberry/images/p3.jpg" alt="chg.jpg" / loading="lazy"></p>
+<p>以上图片来自微信朋友圈：这种天气你有什么破事打电话给我基本没用。但是如果你说&quot;吃火锅&quot;，那就厉害了，我们的故事就开始了。</p>
+<p>本题要求你实现一个程序，自动检查你朋友给你发来的信息里有没有 <code>chi1 huo3 guo1</code>。</p>
+<p><strong>输入格式：</strong><br />
+输入每行给出一句不超过 80 个字符的、以回车结尾的朋友信息，信息为非空字符串，仅包括字母、数字、空格、可见的半角标点符号。当读到某一行只有一个英文句点<code>.</code>时，输入结束，此行不算在朋友信息里。</p>
+<p><strong>输出格式：</strong><br />
+首先在一行中输出朋友信息的总条数。然后对朋友的每一行信息，检查其中是否包含 <code>chi1 huo3 guo1</code>，并且统计这样厉害的信息有多少条。在第二行中首先输出第一次出现 <code>chi1 huo3 guo1</code> 的信息是第几条（从 1 开始计数），然后输出这类信息的总条数，其间以一个空格分隔。题目保证输出的所有数字不超过 100。</p>
+<p>如果朋友从头到尾都没提 <code>chi1 huo3 guo1</code> 这个关键词，则在第二行输出一个表情 <code>-_-#</code>。</p>
+<p><strong>输入样例 1：</strong></p>
+<div class="code-tabs">
+  <div class="code-tabs-nav">
+    <button class="code-tab" data-lang="bash" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">[in]</button>
+  </div>
+  <div class="code-tabs-content">
+    <div class="code-block" data-lang="bash">
+      <pre><code class="language-bash">Hello!
+are you there?
+wantta chi1 huo3 guo1?
+that's so li hai le
+our story begins from chi1 huo3 guo1 le
+.</code></pre>
+    </div>
+  </div>
+</div>
+<p><strong>输出样例 1：</strong></p>
+<div class="code-tabs">
+  <div class="code-tabs-nav">
+    <button class="code-tab" data-lang="bash" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">[out]</button>
+  </div>
+  <div class="code-tabs-content">
+    <div class="code-block" data-lang="bash">
+      <pre><code class="language-bash">5
+3 2</code></pre>
+    </div>
+  </div>
+</div>
+<p><strong>输入样例2：</strong></p>
+<div class="code-tabs">
+  <div class="code-tabs-nav">
+    <button class="code-tab" data-lang="bash" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">[in]</button>
+  </div>
+  <div class="code-tabs-content">
+    <div class="code-block" data-lang="bash">
+      <pre><code class="language-bash">Hello!
+are you there?
+wantta qi huo3 guo1 chi1huo3guo1?
+that's so li hai le
+our story begins from ci1 huo4 guo2 le
+.</code></pre>
+    </div>
+  </div>
+</div>
+<p><strong>输出样例2：</strong></p>
+<div class="code-tabs">
+  <div class="code-tabs-nav">
+    <button class="code-tab" data-lang="bash" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">[out]</button>
+  </div>
+  <div class="code-tabs-content">
+    <div class="code-block" data-lang="bash">
+      <pre><code class="language-bash">5
+-_-#</code></pre>
+    </div>
+  </div>
+</div>
+<h4 id="解析-6"><a class="markdownIt-Anchor" href="#解析-6"></a> 解析</h4>
+<p>也是非常经典的字符串题哈！</p>
+<p>C++的话，使用<code>.substr()</code>函数，截取字符串中一部分（14个字符），判断字符串中是否存在<code>chi1 huo3 guo1</code>，如果存在就记录一次。</p>
+<p>（注：这里还是比较坑的，如果一句话中存在多个<code>chi1 huo3 guo1</code>，<strong>那也只记一次</strong>！）</p>
+<p>其他的参数，比如<strong>语句个数</strong>和<strong>第一次出现<code>chi1 huo3 guo1</code>的语句下标</strong>，选取变量记录即可。</p>
+<p>Python版本，使用<code>.rstrip('\n')</code>就能解决，其他步骤与上述分析相同。</p>
+<p>上代码！</p>
+<h4 id="代码-6"><a class="markdownIt-Anchor" href="#代码-6"></a> 代码</h4>
+<div class="code-tabs">
+  <div class="code-tabs-nav">
+    <button class="code-tab" data-lang="cpp" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">C++</button>
+    <button class="code-tab" data-lang="python" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">Python</button>
+  </div>
+  <div class="code-tabs-content">
+    <div class="code-block" data-lang="cpp">
+      <pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+int main() {
+    string s;
+    int index = -1, cnt = 0, ans = 0;
+    while (getline(cin, s)) {
+        if (s == ".") break;
+        cnt++;
+        string str = "chi1 huo3 guo1";
+        bool found = false;
+        for (int i = 0; i + 14 <= s.size(); i++) {
+            if (s.substr(i, 14) == str) {
+                found = true;// 每行只计一次
+                break;
+            }
+        }
+        if (found) {
+            if (index == -1) index = cnt;
+            ans++;
+        }
+    }
+    if (ans > 0) printf("%d\n%d %d", cnt, index, ans);
+    else printf("%d\n-_-#", cnt);
+    return 0;
+}</code></pre>
+    </div>
+    <div class="code-block" data-lang="python">
+      <pre><code class="language-python">import sys
+cnt = 0
+idx = -1
+ans = 0
+target = "chi1 huo3 guo1"
+for line in sys.stdin:
+    line = line.rstrip('\n')
+    if line == '.':
+        break
+    cnt += 1
+    if target in line:
+        if idx == -1:
+            idx = cnt
+        ans += 1
+print(cnt)
+if ans > 0:
+    print(f"{idx} {ans}")
+else:
+    print("-_-#")</code></pre>
+    </div>
+  </div>
+</div>
+<hr />
+<h3 id="l1-7-前世档案-20分"><a class="markdownIt-Anchor" href="#l1-7-前世档案-20分"></a> L1-7 前世档案 (20分)</h3>
+<p><img src="/CelesteStrawberry/images/L1-071-1.jpg" alt="qs.jpg" / loading="lazy"></p>
+<p>网络世界中时常会遇到这类滑稽的算命小程序，实现原理很简单，随便设计几个问题，根据玩家对每个问题的回答选择一条判断树中的路径（如下图所示），结论就是路径终点对应的那个结点。</p>
+<p><img src="/CelesteStrawberry/images/L1-071-2.jpg" alt="path.jpg" / loading="lazy"></p>
+<p>现在我们把结论从左到右顺序编号，编号从 1 开始。这里假设回答都是简单的&quot;是&quot;或&quot;否&quot;，又假设回答&quot;是&quot;对应向左的路径，回答&quot;否&quot;对应向右的路径。给定玩家的一系列回答，请你返回其得到的结论的编号。</p>
+<p><strong>输入格式：</strong><br />
+输入第一行给出两个正整数：N（≤30）为玩家做一次测试要回答的问题数量；M（≤100）为玩家人数。</p>
+<p>随后 M 行，每行顺次给出玩家的 N 个回答。这里用 <code>y</code> 代表&quot;是&quot;，用 <code>n</code> 代表&quot;否&quot;。</p>
+<p><strong>输出格式：</strong><br />
+对每个玩家，在一行中输出其对应的结论的编号。</p>
+<p><strong>输入样例：</strong></p>
+<div class="code-tabs">
+  <div class="code-tabs-nav">
+    <button class="code-tab" data-lang="bash" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">[in]</button>
+  </div>
+  <div class="code-tabs-content">
+    <div class="code-block" data-lang="bash">
+      <pre><code class="language-bash">3 4
+yny
+nyy
+nyn
+yyn</code></pre>
+    </div>
+  </div>
+</div>
+<p><strong>输出样例：</strong></p>
+<div class="code-tabs">
+  <div class="code-tabs-nav">
+    <button class="code-tab" data-lang="bash" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">[out]</button>
+  </div>
+  <div class="code-tabs-content">
+    <div class="code-block" data-lang="bash">
+      <pre><code class="language-bash">3
+5
+6
+2</code></pre>
+    </div>
+  </div>
+</div>
+<h4 id="解析-7"><a class="markdownIt-Anchor" href="#解析-7"></a> 解析：</h4>
+<p>二分法找节点序号，什么难度不用说了吧…</p>
+<p>容易得到，这棵树有<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">2^n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.664392em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span></span></span></span>个叶子节点，寻找结点的时候要自顶向下层级二分查找。我们假设要找的节点在区间<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mi>l</mi><mo separator="true">,</mo><mi>r</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[l, r]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mclose">]</span></span></span></span>之中，则有：</p>
+<ul>
+<li><span style="font_size: 20px;">若输入的字符是<code>y</code>，说明要找的节点在该子树根节点的左侧，则让右端点<code>r</code>左移：<code>r = (l + r) / 2</code></span></li>
+<li><span style="font_size: 20px;">若输入的字符是<code>n</code>，说明要找的节点在该子树根节点的右侧，则让左端点<code>l</code>右移：<code>l = (l + r) / 2 + 1</code></span></li>
+</ul>
+<p>最后答案就是<code>r</code>或者<code>l</code>，输出就行了。</p>
+<h4 id="代码-7"><a class="markdownIt-Anchor" href="#代码-7"></a> 代码：</h4>
+<div class="code-tabs">
+  <div class="code-tabs-nav">
+    <button class="code-tab" data-lang="cpp" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">C++</button>
+    <button class="code-tab" data-lang="python" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">Python</button>
+  </div>
+  <div class="code-tabs-content">
+    <div class="code-block" data-lang="cpp">
+      <pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+int main(){
+    int n, m;
+    cin >> n >> m;
+    for(int i = 1; i <= m; i++){
+        int l = 1, r = pow(2, n);
+        string s;
+        cin >> s;
+        for(int j = 0; j < s.size(); j++){
+            if(s[j] == 'y'){
+                r = (l + r) / 2;
+            }
+            else{
+                l = (l + r) / 2 + 1;
+            }
+        }
+        cout << r << endl;
+    }
+    return 0;
+}</code></pre>
+    </div>
+    <div class="code-block" data-lang="python">
+      <pre><code class="language-python">n, m = map(int, input().split())
+for _ in range(m):
+    s = input().strip()
+    l, r = 1, 2 ** n
+    for ch in s:
+        if ch == 'y':
+            r = (l + r) // 2
+        else:
+            l = (l + r) // 2 + 1
+    print(r)</code></pre>
+    </div>
+  </div>
+</div>
+<hr />
+<h3 id="l1-8-刮刮彩票-20分"><a class="markdownIt-Anchor" href="#l1-8-刮刮彩票-20分"></a> L1-8 刮刮彩票 (20分)</h3>
+<p>&quot;刮刮彩票&quot;是一款网络游戏里面的一个小游戏。如图所示：</p>
+<p><img src="/CelesteStrawberry/images/L1-072.png" alt="-362960_55cb6a89bf693.png" / loading="lazy"></p>
+<p>每次游戏玩家会拿到一张彩票，上面会有 9 个数字，分别为数字 1 到数字 9，数字各不重复，并以 3×3 的&quot;九宫格&quot;形式排布在彩票上。</p>
+<p>在游戏开始时能看见一个位置上的数字，其他位置上的数字均不可见。你可以选择三个位置的数字刮开，这样玩家就能看见四个位置上的数字了。最后玩家再从 3 横、3 竖、2 斜共 8 个方向中挑选一个方向，方向上三个数字的和可根据下列表格进行兑奖，获得对应数额的金币。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">数字合计</th>
+<th style="text-align:left">获得金币</th>
+<th style="text-align:left">数字合计</th>
+<th style="text-align:left">获得金币</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">6</td>
+<td style="text-align:left">10,000</td>
+<td style="text-align:left">16</td>
+<td style="text-align:left">72</td>
+</tr>
+<tr>
+<td style="text-align:left">7</td>
+<td style="text-align:left">36</td>
+<td style="text-align:left">17</td>
+<td style="text-align:left">180</td>
+</tr>
+<tr>
+<td style="text-align:left">8</td>
+<td style="text-align:left">720</td>
+<td style="text-align:left">18</td>
+<td style="text-align:left">119</td>
+</tr>
+<tr>
+<td style="text-align:left">9</td>
+<td style="text-align:left">360</td>
+<td style="text-align:left">19</td>
+<td style="text-align:left">36</td>
+</tr>
+<tr>
+<td style="text-align:left">10</td>
+<td style="text-align:left">80</td>
+<td style="text-align:left">20</td>
+<td style="text-align:left">306</td>
+</tr>
+<tr>
+<td style="text-align:left">11</td>
+<td style="text-align:left">252</td>
+<td style="text-align:left">21</td>
+<td style="text-align:left">1,080</td>
+</tr>
+<tr>
+<td style="text-align:left">12</td>
+<td style="text-align:left">108</td>
+<td style="text-align:left">22</td>
+<td style="text-align:left">144</td>
+</tr>
+<tr>
+<td style="text-align:left">13</td>
+<td style="text-align:left">72</td>
+<td style="text-align:left">23</td>
+<td style="text-align:left">1,800</td>
+</tr>
+<tr>
+<td style="text-align:left">14</td>
+<td style="text-align:left">54</td>
+<td style="text-align:left">24</td>
+<td style="text-align:left">3,600</td>
+</tr>
+<tr>
+<td style="text-align:left">15</td>
+<td style="text-align:left">180</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<p>现在请你写出一个模拟程序，模拟玩家的游戏过程。</p>
+<p><strong>输入格式:</strong><br />
+输入第一部分给出一张合法的彩票，即用 3 行 3 列给出 0 至 9 的数字。0 表示的是这个位置上的数字初始时就能看见了，而不是彩票上的数字为 0。</p>
+<p>第二部给出玩家刮开的三个位置，分为三行，每行按格式 x y 给出玩家刮开的位置的行号和列号（题目中定义左上角的位置为第 1 行、第 1 列。）。数据保证玩家不会重复刮开已刮开的数字。</p>
+<p>最后一部分给出玩家选择的方向，即一个整数： 1 至 3 表示选择横向的第一行、第二行、第三行，4 至 6 表示纵向的第一列、第二列、第三列，7、8分别表示左上到右下的主对角线和右上到左下的副对角线。</p>
+<p><strong>输出格式:</strong><br />
+对于每一个刮开的操作，在一行中输出玩家能看到的数字。最后对于选择的方向，在一行中输出玩家获得的金币数量。</p>
+<p><strong>输入样例:</strong></p>
+<div class="code-tabs">
+  <div class="code-tabs-nav">
+    <button class="code-tab" data-lang="bash" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">[in]</button>
+  </div>
+  <div class="code-tabs-content">
+    <div class="code-block" data-lang="bash">
+      <pre><code class="language-bash">1 2 3
+4 5 6
+7 8 0
+1 1
+2 2
+2 3
+7</code></pre>
+    </div>
+  </div>
+</div>
+<p><strong>输出样例：</strong></p>
+<div class="code-tabs">
+  <div class="code-tabs-nav">
+    <button class="code-tab" data-lang="bash" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">[in]</button>
+  </div>
+  <div class="code-tabs-content">
+    <div class="code-block" data-lang="bash">
+      <pre><code class="language-bash">1
+5
+6
+180</code></pre>
+    </div>
+  </div>
+</div>
+<h4 id="解析-8"><a class="markdownIt-Anchor" href="#解析-8"></a> 解析：</h4>
+<p>神经打表题，没啥好说的，细心点就行。</p>
+<p>上代码！</p>
+<h4 id="代码-8"><a class="markdownIt-Anchor" href="#代码-8"></a> 代码：</h4>
+<div class="code-tabs">
+  <div class="code-tabs-nav">
+    <button class="code-tab" data-lang="cpp" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">C++</button>
+    <button class="code-tab" data-lang="python" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">Python</button>
+  </div>
+  <div class="code-tabs-content">
+    <div class="code-block" data-lang="cpp">
+      <pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+int table[19] = {10000, 36, 720, 360, 80, 252, 108, 72, 54, 180, 72, 180, 119, 36, 306, 1080, 144, 1800, 3600};
+int main(){
+    int g[3][3], sx = 0, sy = 0;
+    bool vis[10];
+    memset(vis, false, sizeof(vis));
+    for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 3; j++){
+            cin >> g[i][j];
+            if(g[i][j] == 0){
+                sx = i;
+                sy = j;
+            }
+            vis[g[i][j]] = true;
+        }
+    }
+    for(int i = 0; i < 10; i++){
+        if(!vis[i]){
+            g[sx][sy] = i;
+            break;
+        }
+    }
+    for(int i = 1; i <= 3; i++){
+        int x, y;
+        cin >> x >> y;
+        cout << g[x - 1][y - 1] << endl;
+    }
+    int q, sum = 0;
+    cin >> q;
+    if(q >= 1 && q <= 3){
+        sum += g[q - 1][0] + g[q - 1][1] + g[q - 1][2];
+    }
+    else if(q >= 4 && q <= 6){
+        sum += g[0][q - 4] + g[1][q - 4] + g[2][q - 4];
+    }
+    else if(q == 7){
+        sum += g[0][0] + g[1][1] + g[2][2];
+    }
+    else{
+        sum += g[0][2] + g[1][1] + g[2][0];
+    }
+    cout << table[sum - 6];
+    return 0;
+}</code></pre>
+    </div>
+    <div class="code-block" data-lang="python">
+      <pre><code class="language-python">import sys
+table = [10000, 36, 720, 360, 80, 252, 108, 72, 54, 180,
+         72, 180, 119, 36, 306, 1080, 144, 1800, 3600]
+g = [[0] * 3 for _ in range(3)]
+total = 0
+zero_x = zero_y = -1
+for i in range(3):
+    row = list(map(int, sys.stdin.readline().split()))
+    for j in range(3):
+        g[i][j] = row[j]
+        total += row[j]
+        if row[j] == 0:
+            zero_x, zero_y = i, j
+g[zero_x][zero_y] = 45 - total
+for _ in range(3):
+    x, y = map(int, sys.stdin.readline().split())
+    print(g[x - 1][y - 1])
+q = int(sys.stdin.readline())
+line_sum = 0
+if q <= 3:
+    row = q - 1
+    line_sum = sum(g[row])
+elif q <= 6:
+    col = q - 4
+    line_sum = sum(g[i][col] for i in range(3))
+elif q == 7:
+    line_sum = sum(g[i][i] for i in range(3))
+else:
+    line_sum = sum(g[i][2 - i] for i in range(3))
+print(table[line_sum - 6])</code></pre>
+    </div>
+  </div>
+</div>
+<hr />
+<h2 id="l2"><a class="markdownIt-Anchor" href="#l2"></a> L2</h2>
+<h3 id="l2-1-简单计算器"><a class="markdownIt-Anchor" href="#l2-1-简单计算器"></a> L2-1 简单计算器</h3>
+<p>本题要求你为初学数据结构的小伙伴设计一款简单的利用堆栈执行的计算器。如上图所示，计算器由两个堆栈组成，一个堆栈 S​1 ​​存放数字，另一个堆栈 S​2 存放运算符。计算器的最下方有一个等号键，每次按下这个键，计算器就执行以下操作：</p>
+<p>从 S​1中弹出两个数字，顺序为 n​1 和 n2；<br />
+从 S​2中弹出一个运算符 op；<br />
+执行计算 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">n2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord mathnormal">n</span><span class="mord">2</span></span></span></span> op <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">n1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord mathnormal">n</span><span class="mord">1</span></span></span></span>；<br />
+将得到的结果压回 S​1。<br />
+直到两个堆栈都为空时，计算结束，最后的结果将显示在屏幕上。</p>
+<p><strong>输入格式：</strong><br />
+输入首先在第一行给出正整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span>（<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>&lt;</mo><mi>N</mi><mo>≤</mo><mn>1</mn><msup><mn>0</mn><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">1&lt;N≤10^3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68354em;vertical-align:-0.0391em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.13597em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span>），为 S​1中数字的个数。</p>
+<p>第二行给出 N 个绝对值不超过 100 的整数；第三行给出 N−1 个运算符 —— 这里仅考虑<code>+、-、*、/</code> 这四种运算。一行中的数字和符号都以空格分隔。</p>
+<p><strong>输出格式：</strong><br />
+将输入的数字和运算符按给定顺序分别压入堆栈 S​1和 S​2，将执行计算的最后结果输出。注意所有的计算都只取结果的整数部分。题目保证计算的中间和最后结果的绝对值都不超过 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>9</mn></msup></mrow><annotation encoding="application/x-tex">10^9</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span></span></span></span>​​。</p>
+<p>如果执行除法时出现分母为零的非法操作，则在一行中输出：<code>ERROR: X/0</code>，其中 <code>X</code> 是当时的分子。然后结束程序。</p>
+<p><strong>输入样例1</strong></p>
+<div class="code-tabs">
+  <div class="code-tabs-nav">
+    <button class="code-tab" data-lang="bash" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">[in]</button>
+  </div>
+  <div class="code-tabs-content">
+    <div class="code-block" data-lang="bash">
+      <pre><code class="language-bash">5
+40 5 8 3 2
+/ * - +</code></pre>
+    </div>
+  </div>
+</div>
+<p><strong>输出样例1</strong></p>
+<div class="code-tabs">
+  <div class="code-tabs-nav">
+    <button class="code-tab" data-lang="bash" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">[in]</button>
+  </div>
+  <div class="code-tabs-content">
+    <div class="code-block" data-lang="bash">
+      <pre><code class="language-bash">2</code></pre>
+    </div>
+  </div>
+</div>
+<p><strong>输入样例2</strong></p>
+<div class="code-tabs">
+  <div class="code-tabs-nav">
+    <button class="code-tab" data-lang="bash" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">[in]</button>
+  </div>
+  <div class="code-tabs-content">
+    <div class="code-block" data-lang="bash">
+      <pre><code class="language-bash">5
+2 5 8 4 4
+* / - +</code></pre>
+    </div>
+  </div>
+</div>
+<p><strong>输出样例2</strong></p>
+<div class="code-tabs">
+  <div class="code-tabs-nav">
+    <button class="code-tab" data-lang="bash" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">[in]</button>
+  </div>
+  <div class="code-tabs-content">
+    <div class="code-block" data-lang="bash">
+      <pre><code class="language-bash">ERROR: 5/0</code></pre>
+    </div>
+  </div>
+</div>
+<h4 id="解析-9"><a class="markdownIt-Anchor" href="#解析-9"></a> 解析：</h4>
+<p>快乐的出栈，入栈练习题！</p>
+<p>（注意：<strong>所有的计算都只取结果的整数部分</strong>）</p>
+<p>上代码。</p>
+<h4 id="代码-9"><a class="markdownIt-Anchor" href="#代码-9"></a> 代码：</h4>
+<div class="code-tabs">
+  <div class="code-tabs-nav">
+    <button class="code-tab" data-lang="cpp" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">C++</button>
+    <button class="code-tab" data-lang="python" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">Python</button>
+  </div>
+  <div class="code-tabs-content">
+    <div class="code-block" data-lang="cpp">
+      <pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+const int N = 1e3 + 5;
+int n;
+int main() {
+    cin >> n;
+    stack&lt;int&gt; a;
+    stack&lt;char&gt; b;
+    int aa;
+    char bb;
+    for(int i = 0; i < n; i++){
+        cin >> aa;
+        a.push(aa);
+    }
+    for(int i = 0; i < n - 1; i++){
+        cin >> bb;
+        b.push(bb);
+    }
+    int ans = 0;
+    while(a.size() > 1 && !b.empty()){
+        int s1 = a.top();
+        a.pop();
+        int s2 = a.top();
+        a.pop();
+        char x = b.top();
+        b.pop();
+        if(x == '+'){
+            ans = (int)(s2 + s1);
+        }
+        else if(x == '-'){
+            ans = (int)(s2 - s1);
+        }
+        else if(x == '*'){
+            ans = (int)(s2 * s1);
+        }
+        else{
+            if(s1 == 0){
+                cout << "ERROR: " << s2 << "/" << s1;
+                return 0;
+            }
+            ans = (int)(s2 / s1);
+        }
+        a.push(ans);
+    }
+    int k = (int)a.top();
+    cout << k;
+    return 0;
+}</code></pre>
+    </div>
+    <div class="code-block" data-lang="python">
+      <pre><code class="language-python">import sys
+n = int(sys.stdin.readline())
+a = []
+b = []
+nums = list(map(int, sys.stdin.readline().split()))
+for i in range(n):
+    a.append(nums[i])
+ops = sys.stdin.readline().split()
+for i in range(n - 1):
+    b.append(ops[i])
+ans = 0
+while len(a) > 1 and b:
+    s1 = a.pop()
+    s2 = a.pop()
+    x = b.pop()
+    if x == '+':
+        ans = s2 + s1
+    elif x == '-':
+        ans = s2 - s1
+    elif x == '*':
+        ans = s2 * s1
+    else:
+        if s1 == 0:
+            print(f"ERROR: {s2}/{s1}")
+            sys.exit(0)
+        ans = s2 // s1
+    a.append(ans)
+print(a[-1])</code></pre>
+    </div>
+  </div>
+</div>
+<hr />
+<h3 id="l2-2-口罩发放"><a class="markdownIt-Anchor" href="#l2-2-口罩发放"></a> L2-2 口罩发放</h3>
+<p>为了抗击来势汹汹的 COVID19 新型冠状病毒，全国各地均启动了各项措施控制疫情发展，其中一个重要的环节是口罩的发放。</p>
+<p>某市出于给市民发放口罩的需要，推出了一款小程序让市民填写信息，方便工作的开展。小程序收集了各种信息，包括市民的姓名、身份证、身体情况、提交时间等，但因为数据量太大，需要根据一定规则进行筛选和处理，请你编写程序，按照给定规则输出口罩的寄送名单。</p>
+<p><strong>输入格式:</strong><br />
+输入第一行是两个正整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span></span></span>（<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>D</mi><mo separator="true">,</mo><mi>P</mi><mo>≤</mo><mn>30</mn></mrow><annotation encoding="application/x-tex">1≤D,P≤30</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span><span class="mord">0</span></span></span></span>），表示有 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span></span></span></span> 天的数据，市民两次获得口罩的时间至少需要间隔 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span></span></span> 天。</p>
+<p>接下来 D 块数据，每块给出一天的申请信息。第<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span>块数据（<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><mi>D</mi></mrow><annotation encoding="application/x-tex">i=1,⋯,D</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span></span></span></span>）的第一行是两个整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">T_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">S_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><msub><mi>T</mi><mi>i</mi></msub><mo separator="true">,</mo><msub><mi>S</mi><mi>i</mi></msub><mo>≤</mo><mn>1000</mn></mrow><annotation encoding="application/x-tex">1≤T_i,S_i ≤1000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span>)，表示在第<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span>天有 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">T_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 条申请，总共有 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">S_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>个口罩发放名额。随后 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">T_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 行，每行给出一条申请信息，格式如下：</p>
+<p><code>姓名 身份证号 身体情况 提交时间</code></p>
+<p>给定数据约束如下：<br />
+<strong>姓名</strong> ：是一个长度不超过 10 的不包含空格的非空字符串；<br />
+<strong>身份证号</strong> ：是一个长度不超过 20 的非空字符串；<br />
+<strong>身体情况</strong> ：是 0 或者 1，0 表示自觉良好，1 表示有相关症状；<br />
+<strong>提交时间</strong> ：是 hh:mm，为24小时时间（由 00:00 到 23:59。例如 09:08）。注意，给定的记录的提交时间不一定有序；<br />
+身份证号 各不相同，同一个身份证号被认为是同一个人，数据保证同一个身份证号姓名是相同的。</p>
+<p>能发放口罩的记录要求如下：<br />
+<strong>身份证号</strong>必须是 18 位的数字（可以包含前导0）；<br />
+同一个身份证号若在第<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span> 天申请成功，则接下来的 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span></span></span> 天不能再次申请。也就是说，若第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span> 天申请成功，则等到第<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>+</mo><mi>P</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">i+P+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.74285em;vertical-align:-0.08333em;"></span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 天才能再次申请；<br />
+在上面两条都符合的情况下，按照提交时间的先后顺序发放，直至全部记录处理完毕或 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">S_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 个名额用完。如果提交时间相同，则按照在列表中出现的先后顺序决定。</p>
+<p><strong>输出格式:</strong><br />
+对于每一天的申请记录，每行输出一位得到口罩的人的姓名及身份证号，用一个空格隔开。顺序按照发放顺序确定。</p>
+<p>在输出完发放记录后，你还需要输出有合法记录的、身体状况为 1 的申请人的姓名及身份证号，用空格隔开。顺序按照申请记录中出现的顺序确定，同一个人只需要输出一次。</p>
+<p>输入样例：</p>
+<div class="code-tabs">
+  <div class="code-tabs-nav">
+    <button class="code-tab" data-lang="bash" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">[in]</button>
+  </div>
+  <div class="code-tabs-content">
+    <div class="code-block" data-lang="bash">
+      <pre><code class="language-bash">4 2
+5 3
+A 123456789012345670 1 13:58
+B 123456789012345671 0 13:58
+C 12345678901234567 0 13:22
+D 123456789012345672 0 03:24
+C 123456789012345673 0 13:59
+4 3
+A 123456789012345670 1 13:58
+E 123456789012345674 0 13:59
+C 123456789012345673 0 13:59
+F F 0 14:00
+1 3
+E 123456789012345674 1 13:58
+1 1
+A 123456789012345670 0 14:11</code></pre>
+    </div>
+  </div>
+</div>
+<p>输出样例：</p>
+<div class="code-tabs">
+  <div class="code-tabs-nav">
+    <button class="code-tab" data-lang="bash" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">[in]</button>
+  </div>
+  <div class="code-tabs-content">
+    <div class="code-block" data-lang="bash">
+      <pre><code class="language-bash">D 123456789012345672
+A 123456789012345670
+B 123456789012345671
+E 123456789012345674
+C 123456789012345673
+A 123456789012345670
+A 123456789012345670
+E 123456789012345674</code></pre>
+    </div>
+  </div>
+</div>
+<h4 id="解析-10"><a class="markdownIt-Anchor" href="#解析-10"></a> 解析：</h4>
+<p>题目乍一看还挺长的哈，难度呢也比较大，咱们慢慢看哈：</p>
+<p>对于C++来说，一下子输入这么多参数，写结构体记录是很好的选择。</p>
+<p>所以我们令：</p>
+<ul>
+<li><code>name</code>: 登记者的名字</li>
+<li><code>id</code>：身份证号</li>
+<li><code>type</code>：身体状况</li>
+<li><code>minutes</code>：上传信息的时间（转为分钟）</li>
+</ul>
+<p>注意到题目中这样一句话：“<strong>顺序按照申请记录中出现的顺序确定，同一个人只需要输出一次</strong>”，所以还需要一个参数记录出现顺序：</p>
+<ul>
+<li><code>seq</code>：出现顺序</li>
+</ul>
+<p>然后，开始看题目中发放口罩的约束条件：</p>
+<ol>
+<li>身份证号是<strong>18位数字</strong>，则<code>id.size() == 18 &amp;&amp; isdigit(id) == true</code>。</li>
+<li>信息合法的人在第一次领取口罩后，需要间隔<code>p</code>天才能再领。这里注意，我们还需要记录领取过口罩的人员信息，利用<code>map&lt;string, int&gt; res</code>（<code>key：name</code>；<code>value</code>：第几天领取）记录，则可知：
+<ol>
+<li><code>res.count(id)</code>（之前记录过领取口罩）</li>
+<li><code>today &lt; res[id] + p + 1</code>（间隔<code>p</code>天才能领取）</li>
+</ol>
+</li>
+<li>输出时，按时间升序排序；当<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">S_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>为0时，<strong>不再记录后续人员</strong>。</li>
+<li>输出<code>type=1</code>的人员，此时要按时间排序，如果提交时间相同，则按<strong>提交列表中的排位进行排序</strong>。</li>
+</ol>
+<p>上面是再判断过程中的重点，至于输入信息的时候的记录，就细心一点，在程序中多调试几次，检查记录的信息正确之后，在进行判断。</p>
+<p>直接上代码！</p>
+<h4 id="代码-10"><a class="markdownIt-Anchor" href="#代码-10"></a> 代码：</h4>
+<div class="code-tabs">
+  <div class="code-tabs-nav">
+    <button class="code-tab" data-lang="cpp" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">C++</button>
+    <button class="code-tab" data-lang="python" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">Python</button>
+  </div>
+  <div class="code-tabs-content">
+    <div class="code-block" data-lang="cpp">
+      <pre><code id="cpp-code"></code></pre>
+    </div>
+    <div class="code-block" data-lang="python">
+      <pre><code class="language-python">import sys
+def judge(s):
+    return len(s) == 18 and s.isdigit()
+data = sys.stdin.read().strip().split()
+if not data:
+    sys.exit(0)
+it = iter(data)
+d = int(next(it))
+p = int(next(it))
+res = {}           # id -> last day
+ans = []           # list of (name, id) for qualified persons
+vis2 = set()
+for i in range(1, d + 1):
+    rec = int(next(it))
+    num = int(next(it))
+    e = []
+    for j in range(rec):
+        name = next(it)
+        id_ = next(it)
+        typ = int(next(it))
+        time_str = next(it)
+        h, m = map(int, time_str.split(':'))
+        minutes = h * 60 + m
+        e.append((name, id_, typ, minutes, j))
+        if judge(id_) and typ == 1 and id_ not in vis2:
+            ans.append((name, id_))
+            vis2.add(id_)
+    # 按时间排序，时间相同按输入顺序
+    e.sort(key=lambda x: (x[3], x[4]))
+    for name, id_, typ, minutes, seq in e:
+        if not judge(id_):
+            continue
+        if id_ in res and i < res[id_] + p + 1:
+            continue
+        if num > 0:
+            res[id_] = i
+            print(f"{name} {id_}")
+            num -= 1
+# 输出之前收集的所有合格人员
+for name, id_ in ans:
+    print(f"{name} {id_}")</code></pre>
+    </div>
+  </div>
+</div>
+<hr />
+<h3 id="l2-3-完全二叉树的层序遍历"><a class="markdownIt-Anchor" href="#l2-3-完全二叉树的层序遍历"></a> L2-3 完全二叉树的层序遍历</h3>
+<p>一个二叉树，如果每一个层的结点数都达到最大值，则这个二叉树就是完美二叉树。对于深度为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span></span></span></span> 的，有 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> 个结点的二叉树，若其结点对应于相同深度完美二叉树的层序遍历的前 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> 个结点，这样的树就是完全二叉树。</p>
+<p>给定一棵完全二叉树的后序遍历，请你给出这棵树的层序遍历结果。</p>
+<p><strong>输入格式：</strong><br />
+输入在第一行中给出正整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo stretchy="false">(</mo><mo>≤</mo><mn>30</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">N(≤30)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mopen">(</span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">3</span><span class="mord">0</span><span class="mclose">)</span></span></span></span>，即树中结点个数。第二行给出后序遍历序列，为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> 个不超过 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>100</mn></mrow><annotation encoding="application/x-tex">100</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span></span></span></span> 的正整数。同一行中所有数字都以空格分隔。</p>
+<p>输出格式：<br />
+在一行中输出该树的层序遍历序列。所有数字都以 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 个空格分隔，行首尾不得有多余空格。</p>
+<p><strong>输入样例：</strong></p>
+<div class="code-tabs">
+  <div class="code-tabs-nav">
+    <button class="code-tab" data-lang="bash" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">[in]</button>
+  </div>
+  <div class="code-tabs-content">
+    <div class="code-block" data-lang="bash">
+      <pre><code class="language-bash">8
+91 71 2 34 10 15 55 18</code></pre>
+    </div>
+  </div>
+</div>
+<p><strong>输出样例：</strong></p>
+<div class="code-tabs">
+  <div class="code-tabs-nav">
+    <button class="code-tab" data-lang="bash" style="font-family: 'Maple Mono NF CN'; font-size: 16px;">[out]</button>
+  </div>
+  <div class="code-tabs-content">
+    <div class="code-block" data-lang="bash">
+      <pre><code class="language-bash">18 34 55 71 2 10 15 91</code></pre>
+    </div>
+  </div>
+</div>
+<h4 id="解析-11"><a class="markdownIt-Anchor" href="#解析-11"></a> 解析：</h4>
+</div></section></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/CelesteStrawberry/2026/04/13/%E5%9B%A2%E4%BD%93%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%A4%A9%E6%A2%AF%E8%B5%9B/2021%E5%A4%A9%E6%A2%AF%E8%B5%9B/2021%E5%A4%A9%E6%A2%AF%E8%B5%9B/" rel="prev" title=""><span class="icon iconify" data-icon="ri:arrow-left-s-line"></span><span class="post-nav-text"></span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/CelesteStrawberry/2026/03/29/%E5%9B%A2%E4%BD%93%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%A4%A9%E6%A2%AF%E8%B5%9B/L1/L1-009/" rel="next" title="题目索引"><span class="post-nav-text">题目索引</span><span class="icon iconify" data-icon="ri:arrow-right-s-line"></span></a></div></div><div class="like-fav-buttons"><div class="like-btn-wrapper"><button class="like-btn" title="点赞"><span style="font-size:1.2rem">👍</span><!--span.like-count 0--></button></div><div class="fav-btn-wrapper"><button class="fav-btn" title="收藏"><span class="iconify" data-icon="ri:star-line"></span></button></div></div><style>.like-fav-buttons {
+  position: fixed;
+  right: 20px;
+  bottom: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1000;
+}
+
+.like-fav-buttons button {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--hty-card-bg, #fff);
+  border: 1px solid var(--hty-border-color, #ddd);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  transition: all 0.2s;
+  color: var(--hty-text-color, #333);
+}
+
+.like-fav-buttons button:hover {
+  transform: scale(1.05);
+  background: var(--hty-primary-color, #0078e7);
+  color: white;
+}
+
+.like-fav-buttons .iconify {
+  font-size: 1.4rem;
+}
+
+.like-count {
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+.fav-btn.favorited .iconify {
+  color: #ff9800;
+}
+
+.like-btn.liked {
+  background: #0078e7;
+  color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+  .like-fav-buttons button {
+    background: var(--hty-card-bg, #2d2d3a);
+    border-color: var(--hty-border-color, #444);
+    color: var(--hty-text-color, #eee);
+  }
+}
+</style><script>(function () {
+  const path = window.location.pathname;
+  const likeKey = `like_${path}`;           // 点赞总数
+  const userLikeKey = `like_${path}_liked`;  // 当前用户是否点赞
+  const favKey = `fav_${path}`;
+
+  // 点赞总数
+  let likeCount = localStorage.getItem(likeKey);
+  if (likeCount === null) {
+    likeCount = 0;
+    localStorage.setItem(likeKey, likeCount);
+  } else {
+    likeCount = parseInt(likeCount);
+  }
+
+  // 当前用户是否已点赞
+  let isLiked = localStorage.getItem(userLikeKey) === 'true';
+
+  // 收藏状态
+  let isFavorited = localStorage.getItem(favKey) === 'true';
+
+  const likeBtn = document.querySelector('.like-btn');
+  const likeCountSpan = document.querySelector('.like-count');
+  const favBtn = document.querySelector('.fav-btn');
+  const favIcon = favBtn?.querySelector('.iconify');
+
+  // 初始化显示
+  if (likeCountSpan) likeCountSpan.innerText = likeCount;
+  if (isLiked && likeBtn) {
+    likeBtn.classList.add('liked');
+  } else {
+    likeBtn?.classList.remove('liked');
+  }
+
+  if (isFavorited && favBtn) {
+    favBtn.classList.add('favorited');
+    favIcon?.setAttribute('data-icon', 'ri:star-fill');
+  } else {
+    favBtn?.classList.remove('favorited');
+    favIcon?.setAttribute('data-icon', 'ri:star-line');
+  }
+
+  // 点赞按钮：切换逻辑（可取消）
+  if (likeBtn) {
+    likeBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (isLiked) {
+        // 取消点赞
+        likeCount--;
+        localStorage.setItem(likeKey, likeCount);
+        localStorage.setItem(userLikeKey, 'false');
+        isLiked = false;
+        likeBtn.classList.remove('liked');
+      } else {
+        // 点赞
+        likeCount++;
+        localStorage.setItem(likeKey, likeCount);
+        localStorage.setItem(userLikeKey, 'true');
+        isLiked = true;
+        likeBtn.classList.add('liked');
+      }
+      likeCountSpan.innerText = likeCount;
+      likeBtn.style.transform = 'scale(1.2)';
+      setTimeout(() => {
+        likeBtn.style.transform = '';
+      }, 200);
+    });
+  }
+
+  // 收藏按钮：切换逻辑
+  if (favBtn) {
+    favBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (isFavorited) {
+        localStorage.setItem(favKey, 'false');
+        isFavorited = false;
+        favBtn.classList.remove('favorited');
+        favIcon?.setAttribute('data-icon', 'ri:star-line');
+      } else {
+        localStorage.setItem(favKey, 'true');
+        isFavorited = true;
+        favBtn.classList.add('favorited');
+        favIcon?.setAttribute('data-icon', 'ri:star-fill');
+      }
+      favBtn.style.transform = 'scale(1.2)';
+      setTimeout(() => {
+        favBtn.style.transform = '';
+      }, 200);
+    });
+  }
+})();</script></div><div class="hty-card" id="comment"><style>.utterances {
+  max-width: 100%;
+}</style><script src="https://giscus.app/client.js" data-repo="Math-DUT/CelesteStrawberry" data-repo-id="R_kgDORzpAGA" data-category="Announcements" data-category-id="DIC_kwDORzpAGM4C5hMA" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-theme="light" crossorigin="anonymous" async></script></div></main><footer class="sidebar-translate" id="footer"><!--.copyright--><!--  - var nowYear = date(Date.now(), "YYYY")--><!--  span--><!--    | &copy;--><!--    if theme.footer.since && theme.footer.since != nowYear--><!--      | #{theme.footer.since} –--><!--    | #{nowYear}if theme.footer.icon.url
+  a#animate.with-love(href=theme.footer.icon.url, title=theme.footer.icon.title)
+    +icon(theme.footer.icon.name, 20)
+else
+  span#animate.with-love(title=theme.footer.icon.title)
+    +icon(theme.footer.icon.name, 20)
+span.author  Celeste
+--><!--if theme.footer.powered.enable--><!--  .powered--><!--    span!= __('footer.powered', '<a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a>') + ' v' + hexo_env('version')--><!--    span.footer-separator |--><!--    span= __('footer.theme') + ' - '--><!--      a(rel='noopener' href='https://github.com/YunYouJun/hexo-theme-yun' target='_blank')--><!--        span Yun--><!--      |  v#{yun_env('version')}--><div class="busuanzi-count"><span>总访客数:</span><span id="busuanzi_value_site_uv"></span><span> &nbsp;|&nbsp;</span><span>总浏览量:</span><span id="busuanzi_value_site_pv"></span></div><div id="busuanzi"><span id="busuanzi_container_site_uv" title="Total Visitors"><span><span class="icon iconify" data-icon="ri:user-line"></span></span><span id="busuanzi_value_site_uv"></span></span><span class="footer-separator">|</span><span id="busuanzi_container_site_pv" title="Total Views"><span><span class="icon iconify" data-icon="ri:eye-line"></span></span><span id="busuanzi_value_site_pv"></span></span><script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></footer></div><a class="hty-icon-button" id="back-to-top" aria-label="back-to-top" href="#"><span class="icon iconify" data-icon="ri:arrow-up-s-line"></span><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a></body></html>
