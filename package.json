@@ -25,6 +25,6 @@
     "hexo-server": "^3.0.0",
     "hexo-theme-landscape": "^1.0.0",
     "hexo-theme-yun": "^1.10.11",
-    "mouse-firework": "^0.2.0"
+    "mouse-firework": "^0.3.0"
   }
 }
